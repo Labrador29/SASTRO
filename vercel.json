@@ -2,7 +2,7 @@
     "version": 2,
     "functions": {
         "api/index.php": {
-            "runtime": "vercel-php@latest"  // Update to latest version
+            "runtime": "vercel-php@latest"  
         }
     },
     "routes": [
