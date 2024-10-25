@@ -8,8 +8,21 @@
     ],
     "routes": [
         {
+            "src": "/img/(.*)",
+            "dest": "public/img/$1"
+        },
+        {
             "src": "/(.*)",
             "dest": "public/index.php"
         }
-    ]
+    ],
+    "env": {
+        "APP_ENV": "production",
+        "APP_DEBUG": "false", 
+        "APP_URL": "https://sastrodikoroscout.vercel.app/",
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "cookie"
+    },
+    "outputDirectory": "public"
 }
