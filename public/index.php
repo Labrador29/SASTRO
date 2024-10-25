@@ -10,9 +10,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Log errors to a file
-$logFile = __DIR__ . '/../storage/logs/error.log';
-file_put_contents($logFile, "Request: " . print_r($_SERVER, true) . "\n", FILE_APPEND);
+// Log errors to Vercel logs
+error_log("Request: " . print_r($_SERVER, true));
 
 // Check If The Application Is Under Maintenance
 if (file_exists($maintenance = __DIR__ . '/../storage/framework/maintenance.php')) {
