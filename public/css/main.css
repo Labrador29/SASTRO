@@ -4,36 +4,8 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-.navbar {
-    background-color: white;    
-    border-radius: 55px;
-    margin: 30px auto;
-    width: 1400px;
-    height: 75px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.btn-primary {
-    background-color: blue;
-    border-radius: 10px;
-    border-color: blue;
-    padding: 5px 25px;
-    color: white;
-}
-
-.navbar-nav .nav-link {
-    color: black !important; 
-    font-size: 18px;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.navbar-nav .nav-link:hover {
-    color: gray !important; 
-}
-
 #hero {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%) ,url("../assets/hero2.jpg");
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("../assets/hero2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -82,26 +54,26 @@ body {
     height: 95px;
     background-color: #5d009f;
     display: flex;
-    justify-content: center; /* Teks di tengah secara horizontal */
-    align-items: center; /* Teks di tengah secara vertikal */
+    justify-content: center; 
+    align-items: center; 
 }
 
 .rectangle-content {
     display: flex;
-    justify-content: center; /* Mengatur konten untuk berada di tengah */
-    align-items: center; /* Mengatur konten untuk berada di tengah secara vertikal */
+    justify-content: center; 
+    align-items: center; 
 }
 
 .rectangle-text {
     color: white;
-    text-align: center; /* Teks di tengah secara horizontal */
-    font-weight: 800; /* Gunakan nilai yang lebih tinggi untuk menebalkan teks */
-    letter-spacing: 10px; /* Menambahkan spasi antar huruf */
-    font-size: 80px; /* Ukuran font, sesuaikan sesuai kebutuhan */
-    width: 100%; /* Mengatur lebar teks menjadi 100% dari kontainer */
-    padding: 0 20px; /* Menambahkan padding untuk memberi ruang pada tepi */
-    box-sizing: border-box; /* Agar padding tidak menambah ukuran total */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Menambahkan bayangan untuk efek tebal */
+    text-align: center; 
+    font-weight: 800; 
+    letter-spacing: 10px; 
+    font-size: 80px; 
+    width: 100%; 
+    padding: 0 20px; 
+    box-sizing: border-box; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); 
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"); */
@@ -344,47 +316,4 @@ body {
     transform: rotate(90deg);
     color: #5d009f;
 }
-
-.footer {
-    background-color: #430086;
-    color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer div {
-    flex: 1;
-}
-.footer .social-icons a {
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-}
-.footer input[type="email"] {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-.footer button {
-    padding: 10px 20px;
-    background-color: #430086;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.footer button:hover {
-    background-color: #430086;
-}
-
-
-
-
-
-
-
-
 

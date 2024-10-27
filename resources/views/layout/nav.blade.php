@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('css/layout/nav.css') }}">
 <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top" data-aos="fade-down">
     <div class="container">
         <a class="navbar-brand" href="#">
@@ -35,36 +36,6 @@
         </div>
     </div>
 </nav>
-
-<style>
-    .dropdown-menu {
-        background-color: #333;
-        border-radius: 8px;
-        padding: 0.5rem 0;
-        border: none;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        transform: translateY(-10px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .dropdown-menu.show {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .dropdown-item {
-        color: #fff;
-        padding: 10px 20px;
-        transition: background-color 0.3s ease;
-    }
-
-    .dropdown-item:hover {
-        background-color: #555;
-        color: #fff;
-    }
-</style>
-
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelectorAll(".dropdown").forEach(function(dropdown) {

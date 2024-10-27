@@ -1,5 +1,4 @@
 @extends('layout.main')
-
 @section('container')
     <section id="about" class="py-5">
         <div class="container">

@@ -1,5 +1,5 @@
+<link rel="stylesheet" href="{{ asset('css/home/faq.css') }}">
 <section id="faq" class="faq section mt-5 mb-5">
-
     <div class="container section-title mt-5 w-75" data-aos="fade-up">
         <h2>Pertanyaan yang Sering Diajukan (FAQ)</h2>
         <p>Kami telah mengumpulkan pertanyaan-pertanyaan yang paling sering diajukan oleh pelanggan kami. Jika Anda

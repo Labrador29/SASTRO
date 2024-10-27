@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('css/layout/foot.css') }}">
 <footer class="footer py-4" style="margin-top: 120px;" data-aos="fade-up">
     <div class="container">
         <div class="row justify-content-center">
