@@ -58,8 +58,8 @@
         });
 
         AOS.init({
-            duration: 1000, // Durasi animasi dalam milidetik
-            once: true, // Animasi hanya akan muncul sekali ketika di-scroll
+            duration: 1000, 
+            once: true, 
         });
 
         (function() {

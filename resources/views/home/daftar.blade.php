@@ -1,4 +1,4 @@
-<section id="daftar" class="py-5" data-aos="fade-up">
+<section id="daftar" class="py-5" data-aos="fade-right">
     <div class="container py-5">
         <div class="row d-flex align-items-center">
             <div class="col-lg-6">

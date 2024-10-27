@@ -17,13 +17,13 @@
                         <div>
                             <h5>GIAT PENGGGALANG SASTRODIKORO</h5>
                         </div>
-                        <img src="{{ asset('program/proker.png') }}" height="55" width="55" alt="">
+                        <img src="{{ asset('program/gladiator.png') }}" height="55" width="55" alt="">
                     </div>
                 </div>
                 <div class="col-lg-3" data-aos="fade-up">
                     <div class="bg-white rounded-3 shadow p-3 d-flex align-items-center">
                         <div>
-                            <h5>KEMDA (KEMAH PEMUDA)</h5>
+                            <h5>KEMAH PEMUDA (KEMDA)</h5>
                         </div>
                         <img src="{{ asset('program/proker.png') }}" height="55" width="55" alt="">
                     </div>
@@ -41,7 +41,7 @@
                         <div>
                             <h5>ORIENTASI DEWAN AMBALAN</h5>
                         </div>
-                        <img src="{{ asset('program/proker.png') }}" height="55" width="55" alt="">
+                        <img src="{{ asset('program/oda.png') }}" height="55" width="55" alt="">
                     </div>
                 </div>
             </div>
