@@ -1,4 +1,3 @@
-/* Navbar adjustments for larger screens */
 .navbar {
     background-color: white;
     border-radius: 55px;
@@ -6,6 +5,10 @@
     width: 1400px;
     height: 75px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.nav-link.active {
+    text-decoration: underline;
 }
 
 .btn-primary {
@@ -24,7 +27,7 @@
 }
 
 .navbar-nav .nav-link:hover {
-    color: gray !important; 
+    color: #430086 !important; 
 }
 
 .dropdown-menu {
@@ -54,7 +57,6 @@
     color: #fff;
 }
 
-/* Responsive navbar adjustments for smaller screens */
 @media (max-width: 991px) {
     .navbar {
         width: 100%;
@@ -63,22 +65,19 @@
         height: auto;
     }
     
-    /* Center navbar links and button */
     .navbar-nav {
         text-align: center;
         margin: auto;
     }
 
-    /* Logo adjustment */
     .navbar-brand img {
-        width: 150px; /* Adjust as needed */
+        width: 150px;
         height: auto;
     }
 
-    /* Dropdown menu styling on smaller screens */
     .dropdown-menu {
-        position: static; /* Remove fixed dropdown position */
-        width: 100%; /* Make it span full width */
+        position: static; 
+        width: 100%; 
         text-align: center;
     }
     

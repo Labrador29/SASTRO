@@ -20,3 +20,11 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about.index');
 })->name('about');
+
+Route::get('/kegiatan', function () {
+    return view('kegiatan.index');
+})->name('kegiatan');
+
+Route::get('/organisasi', function () {
+    return view('organisasi.index');
+})->name('organisasi');

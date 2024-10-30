@@ -15,7 +15,7 @@
                     nama Bupati
                     Lumajang pada masa Perjuangan yang memimpin Lumajang sejak tahun 1948-1959.
                 </p>
-                <a href="#about" class="btn btn-primary mt-3">About Us</a>
+                <a href="/about" class="btn btn-primary mt-3">About Us</a>
             </div>
         </div>
     </div>
