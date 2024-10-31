@@ -136,7 +136,7 @@
         <div class="row gy-5">
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
-                    <img src="{{ asset('assets/hero2.jpg') }}" class="img-fluid" alt="">
+                    <img src="{{ asset('assets/struktur/arif.jpg') }}" class="img-fluid" alt="">
                     <div class="social">
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -152,7 +152,7 @@
 
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
-                    <img src="{{ asset('assets/hero2.jpg') }}" class="img-fluid" alt="">
+                    <img src="{{ asset('assets/struktur/camel.jpg') }}" class="img-fluid" alt="">
                     <div class="social">
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -168,7 +168,7 @@
 
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
-                    <img src="{{ asset('assets/hero2.jpg') }}" class="img-fluid" alt="">
+                    <img src="{{ asset('assets/struktur/fardan.jpg') }}" class="img-fluid" alt="">
                     <div class="social">
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -184,7 +184,7 @@
 
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
-                    <img src="{{ asset('assets/hero2.jpg') }}" class="img-fluid" alt="">
+                    <img src="{{ asset('assets/struktur/andine.jpg') }}" class="img-fluid" alt="">
                     <div class="social">
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -215,7 +215,7 @@
 
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
-                    <img src="{{ asset('assets/hero2.jpg') }}" class="img-fluid" alt="">
+                    <img src="{{ asset('assets/struktur/devi.jpg') }}" class="img-fluid" alt="">
                     <div class="social">
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -247,7 +247,7 @@
 
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
-                    <img src="{{ asset('assets/hero2.jpg') }}" class="img-fluid" alt="">
+                    <img src="{{ asset('assets/struktur/balqis.jpg') }}" class="img-fluid" alt="">
                     <div class="social">
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -262,7 +262,7 @@
             </div>
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
-                    <img src="{{ asset('assets/hero2.jpg') }}" class="img-fluid" alt="">
+                    <img src="{{ asset('assets/struktur/aldi.jpg') }}" class="img-fluid" alt="">
                     <div class="social">
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -278,7 +278,7 @@
 
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
-                    <img src="{{ asset('assets/hero2.jpg') }}" class="img-fluid" alt="">
+                    <img src="{{ asset('assets/struktur/melan.jpg') }}" class="img-fluid" alt="">
                     <div class="social">
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -294,7 +294,7 @@
 
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
-                    <img src="{{ asset('assets/hero2.jpg') }}" class="img-fluid" alt="">
+                    <img src="{{ asset('assets/struktur/std.jpg') }}" class="img-fluid" alt="">
                     <div class="social">
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -326,7 +326,7 @@
 
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
-                    <img src="{{ asset('assets/hero2.jpg') }}" class="img-fluid" alt="">
+                    <img src="{{ asset('assets/struktur/std.jpg') }}" class="img-fluid" alt="">
                     <div class="social">
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -342,7 +342,7 @@
 
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
-                    <img src="{{ asset('assets/hero2.jpg') }}" class="img-fluid" alt="">
+                    <img src="{{ asset('assets/struktur/nabila.jpg') }}" class="img-fluid" alt="">
                     <div class="social">
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -358,7 +358,7 @@
 
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
-                    <img src="{{ asset('assets/hero2.jpg') }}" class="img-fluid" alt="">
+                    <img src="{{ asset('assets/struktur/std.jpg') }}" class="img-fluid" alt="">
                     <div class="social">
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -367,14 +367,14 @@
                     </div>
                 </div>
                 <div class="member-info">
-                    <h4>VERI ZAINAL ABIDIN</h4>
+                    <h4>DEFANSYA HUDA PRATAMA</h4>
                     <span>CO BIDANG PELATIHAN DAN PENGEMBANGAN </span>
                 </div>
             </div>
 
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
-                    <img src="{{ asset('assets/hero2.jpg') }}" class="img-fluid" alt="">
+                    <img src="{{ asset('assets/struktur/bunga.jpg') }}" class="img-fluid" alt="">
                     <div class="social">
                         <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
