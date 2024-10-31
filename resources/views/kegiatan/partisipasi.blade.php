@@ -87,7 +87,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="card border-0">
-                        <img src="{{ asset('assets/keg4.jpg') }}" class="img-fluid mb-3" alt="">
+                        <img src="{{ asset('assets/kegiatan/raicab.png') }}" class="img-fluid mb-3" alt="">
                         <div class="konten-agenda">
                             <p class="mb-3 text-secondary">13/01/2024</p>
                             <h4 class="fw-bold mb-3">RAIMUNA CABANG LUMAJANG 2022</h4>

@@ -9,12 +9,14 @@
                         67316.
                     </p>
                     <a href="#"><i class="fa-brands fa-facebook"></i></a> <!-- Facebook icon -->
-                    <a href="https://www.instagram.com/sasdikscout_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fa-brands fa-instagram"></i></a> <!-- Instagram icon -->
+                    <a
+                        href="https://www.instagram.com/sasdikscout_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i
+                            class="fa-brands fa-instagram"></i></a> <!-- Instagram icon -->
                     <a href="#"><i class="fa-brands fa-tiktok"></i></a> <!-- TikTok icon -->
                 </div>
             </div>
             <div class="blog col-md-6 text-center">
-                <h3>Blog</h3>
+                <h3>Contact</h3>
                 <p>+6281234567890<br>
                     sasdikscout@gmail.com</p>
             </div>

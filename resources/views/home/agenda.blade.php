@@ -16,7 +16,7 @@
                         <div class="konten-agenda">
                             <p class="mb-3 text-secondary">13/01/2024</p>
                             <h4 class="fw-bold mb-3">KEMAH PEMUDA 2023</h4>
-                            <p class="text-secondary">#anything</p>
+                            <p class="text-secondary">#sastrodikoro</p>
                             <a href="/kegiatan" class="text-decoration-none text-danger">Selengkapnya</a>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                         <div class="konten-agenda">
                             <p class="mb-3 text-secondary">13/01/2024</p>
                             <h4 class="fw-bold mb-3">KELAS GARUDA PENEGAK 2023</h4>
-                            <p class="text-secondary">#anything</p>
+                            <p class="text-secondary">#sastrodikoro</p>
                             <a href="/kegiatan" class="text-decoration-none text-danger">Selengkapnya</a>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                         <div class="konten-agenda">
                             <p class="mb-3 text-secondary">13/01/2024</p>
                             <h4 class="fw-bold mb-3">ORIENTASI DEWAN AMBALAN 2023</h4>
-                            <p class="text-secondary">#anything</p>
+                            <p class="text-secondary">#sastrodikoro</p>
                             <a href="/kegiatan" class="text-decoration-none text-danger">Selengkapnya</a>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                         <div class="konten-agenda">
                             <p class="mb-3 text-secondary">13/01/2024</p>
                             <h4 class="fw-bold mb-3">RAIMUNA NASIONAL XII (CIBUBUR, JAKARTA) 2023</h4>
-                            <p class="text-secondary">#anything</p>
+                            <p class="text-secondary">#sastrodikoro</p>
                             <a href="/kegiatan" class="text-decoration-none text-danger">Selengkapnya</a>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                         <div class="konten-agenda">
                             <p class="mb-3 text-secondary">13/01/2024</p>
                             <h4 class="fw-bold mb-3">GIAT PENGGALANG SASTRODIKORO II 2024</h4>
-                            <p class="text-secondary">#anything</p>
+                            <p class="text-secondary">#sastrodikoro</p>
                             <a href="/kegiatan" class="text-decoration-none text-danger">Selengkapnya</a>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                         <div class="konten-agenda">
                             <p class="mb-3 text-secondary">13/01/2024</p>
                             <h4 class="fw-bold mb-3">MUSTEGAK <br> (MUSYAWARAH PENEGAK) 2024</h4>
-                            <p class="text-secondary">#anything</p>
+                            <p class="text-secondary">#sastrodikoro</p>
                             <a href="/kegiatan" class="text-decoration-none text-danger">Selengkapnya</a>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                         <div class="konten-agenda">
                             <p class="mb-3 text-secondary">13/01/2024</p>
                             <h4 class="fw-bold mb-3">ANTIDRUGS SCOUT FESTIVAL 2023</h4>
-                            <p class="text-secondary">#anything</p>
+                            <p class="text-secondary">#sastrodikoro</p>
                             <a href="/kegiatan" class="text-decoration-none text-danger">Selengkapnya</a>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                         <div class="konten-agenda">
                             <p class="mb-3 text-secondary">13/01/2024</p>
                             <h4 class="fw-bold mb-3">ORIENTASI DEWAN AMBALAN 2024</h4>
-                            <p class="text-secondary">#anything</p>
+                            <p class="text-secondary">#sastrodikoro</p>
                             <a href="/kegiatan" class="text-decoration-none text-danger">Selengkapnya</a>
                         </div>
                     </div>
