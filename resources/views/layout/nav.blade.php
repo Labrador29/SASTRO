@@ -2,11 +2,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top" data-aos="fade-down">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <img src="{{ asset('icons/Logo.png') }}" height="50" width="190" alt="">
+            <img src="{{ asset('icons/Logo.png') }}" height="50" width="190">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <i class="fa-solid fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -37,18 +37,3 @@
         </div>
     </div>
 </nav>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.querySelectorAll(".dropdown").forEach(function(dropdown) {
-            dropdown.addEventListener("show.bs.dropdown", function() {
-                let menu = this.querySelector(".dropdown-menu");
-                menu.classList.add("show");
-            });
-
-            dropdown.addEventListener("hide.bs.dropdown", function() {
-                let menu = this.querySelector(".dropdown-menu");
-                menu.classList.remove("show");
-            });
-        });
-    });
-</script>
