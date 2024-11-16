@@ -32,7 +32,7 @@
                 </li>
             </ul>
             <div class="d-flex">
-                <button class="btn btn-primary">Login</button>
+                <a href="/login" class="btn btn-primary">Login</a>
             </div>
         </div>
     </div>
