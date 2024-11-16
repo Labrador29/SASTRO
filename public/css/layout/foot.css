@@ -36,3 +36,8 @@
 .footer button:hover {
     background-color: #430086;
 }
+
+.footer .copyright {
+    font-size: 12px;
+    color: #ffffff;
+}

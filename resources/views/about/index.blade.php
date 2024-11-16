@@ -14,4 +14,6 @@
             </div>
         </div>
     </section>
+
+    @include('about.content')
 @endsection

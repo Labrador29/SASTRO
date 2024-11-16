@@ -21,5 +21,12 @@
                     sasdikscout@gmail.com</p>
             </div>
         </div>
+        <hr class="mt-4">
+        <div class="row">
+            <div class="col text-center">
+                <p class="mb-0" style="font-size: 12px; color: #ffffff;">&copy; {{ date('Y') }} Unit IT 45 Dewan
+                    Ambalan Sastrodikoro.</p>
+            </div>
+        </div>
     </div>
 </footer>

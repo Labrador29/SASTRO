@@ -17,21 +17,21 @@
         </div>
     </div>
 </section>
-<section id="about" class="py-5" style="margin-left: 200px;" data-aos="fade-left">
+<section id="about" class="py-5" style="margin-top: 70px;" data-aos="fade-left">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6 order-lg-1 text-end">
-                <h2 class="fw-bold mb-3">Our Mission </h2>
-                <p class="text-secondary">
+            <div class="col-lg-6 order-2 order-lg-1 text-end">
+                <h2 class="fw-bold mb-3">Our Mission</h2>
+                <p class="text-secondary mb-0">
                     Di Dewan Ambalan Sastrodikoro, misi kami adalah menjadi pelopor dalam membentuk pemimpin muda
                     Indonesia yang berkarakter, tangguh, dan siap bersaing di era digital. Dengan semangat Pramuka, kami
                     memanfaatkan digitalisasi sebagai alat untuk meningkatkan keterampilan kepemimpinan, komunikasi, dan
                     kerja sama tim, sehingga anggota kami dapat menjadi agen perubahan di masyarakat.
                 </p>
             </div>
-            <div class="col-lg-6 order-lg-2">
-                <img src="{{ asset('assets/bidang/pelatihan.JPG') }}" class="img-fluid rounded-3 img-small"
-                    alt="About Image">
+            <div class="col-lg-6 order-1 order-lg-2">
+                <img src="{{ asset('assets/bidang/pelatihan.JPG') }}" class="img-fluid rounded-3 w-85 ms-auto"
+                    style="max-width: 90%; display: block;" alt="About Image">
             </div>
         </div>
     </div>
