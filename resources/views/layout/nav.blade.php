@@ -28,12 +28,13 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/organisasi">Pembina</a></li>
                         <li><a class="dropdown-item" href="/organisasi">Struktur Organisasi</a></li>
+                        <li><a class="dropdown-item" href="/organisasi">Alumni</a></li>
                     </ul>
                 </li>
             </ul>
-            <div class="d-flex">
+            <!-- <div class="d-flex">
                 <a href="/login" class="btn btn-primary">Login</a>
-            </div>
+            </div> -->
         </div>
     </div>
 </nav>

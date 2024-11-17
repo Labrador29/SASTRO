@@ -25,4 +25,8 @@ class PageController extends Controller
     {
         return view('organisasi.index');
     }
+    public function berita()
+    {
+        return view('berita.index');
+    }
 }

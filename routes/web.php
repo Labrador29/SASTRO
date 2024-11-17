@@ -25,6 +25,7 @@ Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/kegiatan', [PageController::class, 'kegiatan'])->name('kegiatan');
 Route::get('/organisasi', [PageController::class, 'organisasi'])->name('organisasi');
+Route::get('/berita', [PageController::class, 'berita'])->name('berita');
 
 // Auth Routes
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
