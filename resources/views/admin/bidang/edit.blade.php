@@ -4,17 +4,23 @@
 <div class="container max-w-6xl mx-auto px-4">
     <h1 class="my-4 text-2xl font-semibold">Edit Bidang</h1>
 
-    <form action="{{ route('bidang.update', $bidang) }}" method="POST">
+    <form action="{{ route('bidang.update', $bidang) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
-        <div class="mb-4">
-            <label for="nama_bidang" class="block text-sm font-medium text-gray-700">Nama Bidang</label>
-            <input type="text" name="nama_bidang" class="form-input mt-1 block w-full border-gray-300 rounded-md shadow-sm" value="{{ $bidang->nama_bidang }}" required>
+        <div class="mb-3">
+            <label for="nama_bidang" class="form-label">Nama Bidang</label>
+            <input type="text" name="nama_bidang" id="nama_bidang" class="form-control" value="{{ $bidang->nama_bidang }}" required>
         </div>
-        <div class="mb-4">
-            <label for="deskripsi" class="block text-sm font-medium text-gray-700">Deskripsi</label>
-            <textarea name="deskripsi" class="form-textarea mt-1 block w-full border-gray-300 rounded-md shadow-sm">{{ $bidang->deskripsi }}</textarea>
+        <div class="mb-3">
+            <label for="deskripsi" class="form-label">Deskripsi</label>
+            <textarea name="deskripsi" id="deskripsi" class="form-control">{{ $bidang->deskripsi }}</textarea>
         </div>
+        <div class="mb-3">
+            <label for="gambar" class="form-label">Upload Foto Baru</label>
+            <input type="file" name="gambar" id="gambar" class="form-control" accept="image/*">
+            <small class="text-secondary">Kosongkan jika tidak ingin mengganti gambar.</small>
+        </div>
+
         <button type="submit" class="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600">Update</button>
     </form>
 </div>

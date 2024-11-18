@@ -51,4 +51,23 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::delete('events/{event}', [EventController::class, 'destroy'])->name('admin.events.destroy');
 
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::prefix('bidang')->name('bidang.')->group(function () {
+        // Menampilkan daftar bidang
+        Route::get('/', [BidangController::class, 'index'])->name('index');
+
+        // Menampilkan form untuk menambahkan bidang
+        Route::get('/create', [BidangController::class, 'create'])->name('create');
+
+        // Menyimpan data bidang yang baru ditambahkan
+        Route::post('/', [BidangController::class, 'store'])->name('store');
+
+        // Menampilkan form untuk mengedit bidang
+        Route::get('/{bidang}/edit', [BidangController::class, 'edit'])->name('edit');
+
+        // Memperbarui data bidang
+        Route::put('/{bidang}', [BidangController::class, 'update'])->name('update');
+
+        // Menghapus bidang
+        Route::delete('/{bidang}', [BidangController::class, 'destroy'])->name('destroy');
+    });
 });

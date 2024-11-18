@@ -4,6 +4,7 @@ namespace App\Imports;
 
 use App\Models\User;
 use App\Models\Member;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\Importable;
@@ -13,32 +14,31 @@ class MassUserImport implements ToCollection
     use Importable;
 
     public function collection(Collection $rows)
-    {
-        foreach ($rows as $row) {
-            // Ambil data dari setiap baris di Excel
-            $user = User::create([
-                'name' => $row[0],
-                'email' => $row[1],
-                'password' => bcrypt($row[2]), // Enkripsi password
-                'role' => 'alumni', // Anda bisa menyesuaikan ini jika diperlukan
-            ]);
+{
+    // Lewati header (baris pertama)
+    $rows = $rows->skip(1);
 
-            // Menambahkan data ke tabel members
-            Member::create([
-                'user_id' => $user->id,
-                'angkatan' => $row[3],
-                'bidang_id' => $this->getBidangId($row[4]), // Fungsi untuk mendapatkan bidang_id
-                'instagram' => $row[5],
-                'facebook' => $row[6],
-                'x' => $row[7],
-            ]);
-        }
-    }
+    foreach ($rows as $row) {
+        // Buat pengguna baru
+        $user = User::create([
+            'name' => $row[0], // Kolom Nama
+            'email' => $row[1], // Kolom Email
+            'password' => Hash::make($row[2]), // Kolom Password
+            'role' => 'alumni',
+        ]);
 
-    // Fungsi untuk mencari ID bidang berdasarkan nama bidang
-    private function getBidangId($bidangName)
-    {
-        // Misalnya, kita asumsikan ada model Bidang untuk mencari berdasarkan nama
-        return \App\Models\Bidang::where('name', $bidangName)->first()->id;
+        // Generate QR Code untuk setiap pengguna
+        $user->generateQRCode();
+
+        // Buat data member
+        Member::create([
+            'user_id' => $user->id,
+            'angkatan' => $row[3], // Kolom Angkatan
+            'instagram' => $row[4], // Kolom Instagram
+            'facebook' => $row[5], // Kolom Facebook
+            'x' => $row[6], // Kolom X
+        ]);
     }
+}
+
 }

@@ -42,7 +42,11 @@
                 <td class="py-2 px-4 border-b">{{ $user->member->facebook ?? '-' }}</td>
                 <td class="py-2 px-4 border-b">{{ $user->member->x ?? '-' }}</td>
                 <td class="py-2 px-4 border-b">
-                    <!-- Here you can add buttons or links for actions like viewing or generating QR Code -->
+                    @if ($user->qr_code)
+                    {!! QrCode::size(100)->generate($user->qr_code) !!}
+                    @else
+                    <span>QR Code belum dihasilkan</span>
+                    @endif
                 </td>
             </tr>
             @endforeach

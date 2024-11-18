@@ -23,9 +23,19 @@ class BidangController extends Controller
         $request->validate([
             'nama_bidang' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        Bidang::create($request->all());
+        $data = $request->only(['nama_bidang', 'deskripsi']);
+
+        // Proses Upload Gambar
+        if ($request->hasFile('gambar')) {
+            $fileName = time() . '.' . $request->gambar->extension();
+            $request->gambar->move(public_path('assets/bidang'), $fileName);
+            $data['gambar'] = $fileName;
+        }
+
+        Bidang::create($data);
 
         return redirect()->route('bidang.index')->with('success', 'Bidang berhasil ditambahkan!');
     }
@@ -40,9 +50,24 @@ class BidangController extends Controller
         $request->validate([
             'nama_bidang' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
 
-        $bidang->update($request->all());
+        $data = $request->only(['nama_bidang', 'deskripsi']);
+
+        // Proses Upload Gambar Baru
+        if ($request->hasFile('gambar')) {
+            // Hapus gambar lama jika ada
+            if ($bidang->gambar && file_exists(public_path('assets/bidang/' . $bidang->gambar))) {
+                unlink(public_path('assets/bidang/' . $bidang->gambar));
+            }
+
+            $fileName = time() . '.' . $request->gambar->extension();
+            $request->gambar->move(public_path('assets/bidang'), $fileName);
+            $data['gambar'] = $fileName;
+        }
+
+        $bidang->update($data);
 
         return redirect()->route('bidang.index')->with('success', 'Bidang berhasil diperbarui!');
     }

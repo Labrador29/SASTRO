@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bidang;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     public function home()
     {
-        return view('home.index');
+        $bidangs = Bidang::all(); // Mengambil semua data bidang
+        return view('home.index', compact('bidangs'));
     }
 
     public function about()

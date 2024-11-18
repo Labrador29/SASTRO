@@ -12,7 +12,6 @@ class Member extends Model
     protected $fillable = [
         'user_id',
         'angkatan',
-        'bidang_id',
         'instagram',
         'facebook',
         'x',
@@ -21,11 +20,6 @@ class Member extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    public function bidang()
-    {
-        return $this->belongsTo(Bidang::class);
     }
     protected $table = "member";
 }

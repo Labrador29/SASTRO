@@ -38,8 +38,8 @@ class User extends Authenticatable
     {
         $this->qr_code = uniqid('USR');
         $this->save();
-
-        return QrCode::size(300)
-            ->generate($this->qr_code);
+    
+        return \SimpleSoftwareIO\QrCode\Facades\QrCode::size(300)->generate($this->qr_code);
     }
+    
 }

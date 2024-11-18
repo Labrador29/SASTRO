@@ -9,6 +9,7 @@ class Bidang extends Model
     protected $fillable = [
         'nama_bidang',
         'deskripsi',
+        'gambar',
     ];
 
     protected $table = "bidang";
