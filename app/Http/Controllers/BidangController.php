@@ -23,7 +23,7 @@ class BidangController extends Controller
         $request->validate([
             'nama_bidang' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif',
         ]);
 
         $data = $request->only(['nama_bidang', 'deskripsi']);
