@@ -17,16 +17,17 @@
             <div class="flex justify-between">
                 <div class="flex items-center space-x-3">
                     @auth
-                    <a href="{{ route('dashboard') }}" class="py-2 px-4 text-gray-700 hover:text-gray-900">Dashboard</a>
-                    <a href="{{ route('events.index') }}" class="py-2 px-4 text-gray-700 hover:text-gray-900">Acara</a>
-                    <a href="{{ route('users.index') }}" class="py-2 px-4 text-gray-700 hover:text-gray-900">Users</a>
-                    <a href="{{ route('bidang.index') }}" class="py-2 px-4 text-gray-700 hover:text-gray-900">Bidang</a>
-                    <span class="text-gray-700">{{ auth()->user()->name }}</span>
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button type="submit"
-                            class="py-2 px-4 bg-red-500 text-white rounded hover:bg-red-600">Logout</button>
-                    </form>
+                        <a href="{{ route('dashboard') }}" class="py-2 px-4 text-gray-700 hover:text-gray-900">Dashboard</a>
+                        <a href="{{ route('admin') }}" class="py-2 px-4 text-gray-700 hover:text-gray-900">Dashboard 2</a>
+                        <a href="{{ route('events.index') }}" class="py-2 px-4 text-gray-700 hover:text-gray-900">Acara</a>
+                        <a href="{{ route('users.index') }}" class="py-2 px-4 text-gray-700 hover:text-gray-900">Users</a>
+                        <a href="{{ route('bidang.index') }}" class="py-2 px-4 text-gray-700 hover:text-gray-900">Bidang</a>
+                        <span class="text-gray-700">{{ auth()->user()->name }}</span>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit"
+                                class="py-2 px-4 bg-red-500 text-white rounded hover:bg-red-600">Logout</button>
+                        </form>
                     @endauth
                 </div>
             </div>

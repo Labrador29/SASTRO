@@ -41,4 +41,9 @@ class DashboardController extends Controller
             return view('admin.dashboard.alumni', compact('myAttendances', 'upcomingEvents'));
         }
     }
+
+    public function admin()
+    {
+        return view('admin.dashboard.index');
+    }
 }

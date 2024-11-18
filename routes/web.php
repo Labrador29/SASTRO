@@ -44,30 +44,19 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    Route::get('/admin', [DashboardController::class, 'admin'])->name('admin');
     Route::get('events/create', [EventController::class, 'create'])->name('admin.events.create');
     Route::post('events', [EventController::class, 'store'])->name('admin.events.store');
     Route::get('events/{event}/edit', [EventController::class, 'edit'])->name('admin.events.edit');
     Route::put('events/{event}', [EventController::class, 'update'])->name('admin.events.update');
     Route::delete('events/{event}', [EventController::class, 'destroy'])->name('admin.events.destroy');
-
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::prefix('bidang')->name('bidang.')->group(function () {
-        // Menampilkan daftar bidang
         Route::get('/', [BidangController::class, 'index'])->name('index');
-
-        // Menampilkan form untuk menambahkan bidang
         Route::get('/create', [BidangController::class, 'create'])->name('create');
-
-        // Menyimpan data bidang yang baru ditambahkan
         Route::post('/', [BidangController::class, 'store'])->name('store');
-
-        // Menampilkan form untuk mengedit bidang
         Route::get('/{bidang}/edit', [BidangController::class, 'edit'])->name('edit');
-
-        // Memperbarui data bidang
         Route::put('/{bidang}', [BidangController::class, 'update'])->name('update');
-
-        // Menghapus bidang
         Route::delete('/{bidang}', [BidangController::class, 'destroy'])->name('destroy');
     });
 });
