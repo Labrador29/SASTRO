@@ -9,6 +9,8 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\BidangController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MassRegistrationController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +27,8 @@ Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/kegiatan', [PageController::class, 'kegiatan'])->name('kegiatan');
 Route::get('/organisasi', [PageController::class, 'organisasi'])->name('organisasi');
-Route::get('/berita', [PageController::class, 'berita'])->name('berita');
+Route::get('/berita', [PageController::class, 'berita'])->name('berita.index');
+Route::get('/berita/{id}', [PageController::class, 'beritaDetail'])->name('berita.detail');
 
 // Auth Routes
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
@@ -50,6 +53,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('events/{event}/edit', [EventController::class, 'edit'])->name('admin.events.edit');
     Route::put('events/{event}', [EventController::class, 'update'])->name('admin.events.update');
     Route::delete('events/{event}', [EventController::class, 'destroy'])->name('admin.events.destroy');
+    Route::resource('categories', CategoryController::class); // Pastikan namespace sesuai dengan lokasi controller
+    Route::resource('news', NewsController::class); // Pastikan namespace sesuai dengan lokasi controller
+
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::prefix('bidang')->name('bidang.')->group(function () {
         Route::get('/', [BidangController::class, 'index'])->name('index');

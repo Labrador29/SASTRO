@@ -1,32 +1,30 @@
-@extends('layout.main')
-@section('container')
-<section id="hero" class="px-0">
-    <div class="container text-center text-white">
-        <div class="hero-title">
-            <div class="hero-text">Welcome To <br> Dewan Ambalan Sastrodikoro</div>
-            <h4>Gugus Depan SMK Negeri 1 Lumajang</h4>
-        </div>
-    </div>
-</section>
-<section id="detail-berita" class="py-5" style="margin-top: 70px;" data-aos="fade-up">
-    <div class="container">
-        <div class="row">
-            <!-- Konten Berita -->
-            <div class="col-lg-8 mx-auto">
-                <div class="text-center">
+@extends('layouts.app')
 
-                    <h1 class="fw-bold">Giat Penggalang Sastrodikoro (GLADIATOR)</h1>
-                    <p class="text-muted">Dipublikasikan pada 17 November 2024</p>
-                    <img src="{{ asset('program/proker.png') }}" class="img-fluid rounded-3 mb-4"
-                        alt="">
-                </div>
-                <div class="content">
-                    Isi berita Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam autem quam ab beatae eveniet. Error sit, sapiente soluta repellendus quam neque ex quisquam aliquid et accusantium aperiam? Itaque est suscipit rerum voluptate officiis. Voluptas autem est adipisci velit, temporibus accusamus! Voluptate deserunt, culpa, facere ipsam deleniti accusamus adipisci ipsum omnis vel commodi cum. Illum ut amet molestias distinctio! Quas rem ab molestiae minus eaque eligendi omnis tempore sit, doloribus illo quod illum quam modi quaerat? Maiores quam voluptate ipsam possimus odit impedit quidem eos commodi suscipit. Sed incidunt veniam laborum eveniet laboriosam iste eligendi, ipsum dicta, voluptas asperiores quam amet!
+@section('content')
+<div class="container">
+    <h1>Daftar Berita</h1>
+    <div class="row">
+        @foreach($news as $item)
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $item->judul }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        Kategori: {{ $item->category->name ?? 'Tanpa Kategori' }}
+                    </h6>
+                    <p class="card-text">
+                        {{ \Illuminate\Support\Str::limit($item->isi, 100) }} {{-- Potong teks jika terlalu panjang --}}
+                    </p>
+                    <p class="text-muted">
+                        Tanggal: {{ $item->tanggal_berita }}
+                    </p>
+                    <a href="{{ route('berita.detail', $item->id) }}" class="btn btn-primary">
+                        Baca Selengkapnya
+                    </a>
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
-</section>
-
-<!-- Komentar -->
+</div>
 @endsection
