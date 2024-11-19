@@ -11,7 +11,7 @@ class PageController extends Controller
     public function home()
     {
         // Mengambil 5 berita terbaru dengan relasi kategori
-        $news = News::with('category')->orderBy('tanggal_berita', 'desc')->limit(5)->get();
+        $news = News::with('category')->orderBy('tanggal_berita', 'desc')->get();
 
         // Mengambil data bidang (jika masih diperlukan)
         $bidangs = Bidang::all();

@@ -10,8 +10,8 @@
         <div class="swiper mySwiper py-5">
             <div class="swiper-wrapper">
                 <!-- Slide 1 -->
+                @foreach($news as $item)
                 <div class="swiper-slide">
-                    @foreach($news as $item)
                     <div class="card border-0">
                         <img src="{{ asset('assets/berita/' . $item->foto) }}" class="img-fluid mb-3" alt="{{ $item->judul }}">
                         <div class="konten-agenda">
@@ -22,8 +22,8 @@
                             <a href="{{ route('berita.detail', $item->id) }}" class="text-decoration-none text-danger">Selengkapnya</a>
                         </div>
                     </div>
-                    @endforeach
                 </div>
+                @endforeach
 
             </div>
 
