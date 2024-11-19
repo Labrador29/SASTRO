@@ -6,8 +6,8 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
             <h6 class="m-0 font-weight-bold text-primary">Daftar Bidang</h6>
-            <a href="{{ route('admin.mass.register.form') }}" class="btn-primary text-white py-2 px-4 rounded hover:bg-blue">
-                Tambah Bidang
+            <a href="{{ route('bidang.create') }}" class="btn-primary text-white py-2 px-3 rounded hover:bg-blue">
+                <i class="fa-solid fa-plus"></i> Tambah Bidang
             </a>
         </div>
 
@@ -20,9 +20,9 @@
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead class="bg-gray-200">
-                        <tr>
-                            <th class="py-2 px-4 border-b">#</th>
+                    <thead style="background-color: rgb(183, 0, 255);">
+                        <tr class="text-white">
+                            <th class="py-2 px-4 border-b">No</th>
                             <th class="py-2 px-4 border-b">Nama Bidang</th>
                             <th class="py-2 px-4 border-b">Deskripsi</th>
                             <th class="py-2 px-4 border-b">Aksi</th>

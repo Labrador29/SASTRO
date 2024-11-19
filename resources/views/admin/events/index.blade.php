@@ -2,13 +2,14 @@
 @section('container')
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Daftar Acara </h1>
-    <p class="mb-4">Masukkan daftar Acara yang akan datang untuk mengethuai lebih detail</p>
+    <p class="mb-4">Masukkan daftar Acara yang akan datang untuk mengetahui lebih detail</p>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
             <h6 class="m-0 font-weight-bold text-primary">Daftar Acara</h6>
-            <a href="{{ route('admin.mass.register.form') }}" class="btn-primary text-white py-2 px-4 rounded hover:bg-blue">
+            <a href="{{ route('admin.events.create') }}" class="btn-primary text-white py-2 px-2 rounded hover:bg-blue"><i
+                    class="fa-solid fa-plus"></i>
                 Tambah Acara
             </a>
         </div>
@@ -20,8 +21,8 @@
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
+                    <thead style="background-color: rgb(183, 0, 255);;">
+                        <tr class="text-white">
                             <th>Nama Acara</th>
                             <th>Tanggal</th>
                             <th>Lokasi</th>
