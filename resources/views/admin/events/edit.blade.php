@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
-@section('content')
+@section('container')
 <div class="container mx-auto px-4 py-8">
     <div class="max-w-2xl mx-auto">
         <h1 class="text-3xl font-bold mb-6">Edit Acara</h1>

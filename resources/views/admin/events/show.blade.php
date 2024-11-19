@@ -1,6 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
-@section('content')
+@section('container')
+
+<h1 class="h3 mb-2 text-gray-800">Detail Acara {{ $event->name }} </h1>
+<p class="mb-4">Berisi tentang detail sebuah acara yang diselenggarakan oleh pengurus dewan ambalan sastrodikoro</p>
 <div class="container mx-auto px-4 py-8">
     <div class="bg-white shadow-lg rounded-lg overflow-hidden">
         <!-- Detail Acara -->
@@ -9,11 +12,11 @@
                 <h1 class="text-3xl font-bold mb-4">{{ $event->name }}</h1>
                 @if(auth()->user()->role === 'admin')
                 <div class="space-x-2">
-                    <a href="{{ route('events.edit', $event) }}"
+                    <a href="{{ route('admin.events.edit', $event) }}"
                         class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
                         Edit
                     </a>
-                    <form action="{{ route('events.destroy', $event) }}" method="POST" class="inline">
+                    <form action="{{ route('admin.events.destroy', $event) }}" method="POST" class="inline">
                         @csrf
                         @method('DELETE')
                         <button type="submit"
