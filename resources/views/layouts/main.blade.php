@@ -54,13 +54,13 @@
                 </div>
                 <!-- End of Main Content -->
 
-                @include('layouts.footer')
 
             </div>
             <!-- End of Content Wrapper -->
 
             @stack('script')
 
+            @include('layouts.footer')
         </div>
         <!-- End of Page Wrapper -->
 
@@ -107,6 +107,7 @@
         <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
 
         <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+
 
 </body>
 

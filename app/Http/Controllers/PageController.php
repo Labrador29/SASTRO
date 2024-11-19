@@ -16,23 +16,23 @@ class PageController extends Controller
         // Mengambil data bidang (jika masih diperlukan)
         $bidangs = Bidang::all();
 
-        return view('home.index', compact('news', 'bidangs'));
+        return view('beranda.home.index', compact('news', 'bidangs'));
     }
 
 
     public function about()
     {
-        return view('about.index');
+        return view('beranda.about.index');
     }
 
     public function kegiatan()
     {
-        return view('kegiatan.index');
+        return view('beranda.kegiatan.index');
     }
 
     public function organisasi()
     {
-        return view('organisasi.index');
+        return view('beranda.organisasi.index');
     }
     public function berita()
     {

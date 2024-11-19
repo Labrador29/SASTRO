@@ -49,9 +49,9 @@
     </section>
 
 
-    @include('home.about')
-    @include('home.agenda')
-    @include('home.daftar')
-    @include('home.bidang')
-    @include('home.faq')
+    @include('beranda.home.about')
+    @include('beranda.home.agenda')
+    @include('beranda.home.daftar')
+    @include('beranda.home.bidang')
+    @include('beranda.home.faq')
 @endsection

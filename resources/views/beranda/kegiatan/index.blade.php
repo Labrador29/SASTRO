@@ -9,6 +9,6 @@
         </div>
     </section>
 
-    @include('kegiatan.kegiatan')
-    @include('kegiatan.partisipasi')
+    @include('beranda.kegiatan.kegiatan')
+    @include('beranda.kegiatan.partisipasi')
 @endsection
