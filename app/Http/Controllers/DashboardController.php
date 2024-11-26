@@ -12,7 +12,6 @@ class DashboardController extends Controller
     public function index()
     {
         if (auth()->user()->role === 'admin') {
-            // Data untuk admin
             $totalAlumni = User::where('role', 'alumni')->count();
             $totalEvents = Event::count();
             $recentEvents = Event::latest()->take(5)->get();
@@ -28,7 +27,6 @@ class DashboardController extends Controller
                 'recentAttendances'
             ));
         } else {
-            // Data untuk alumni
             $myAttendances = Attendance::where('user_id', auth()->id())
                 ->with('event')
                 ->latest()

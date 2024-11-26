@@ -28,7 +28,6 @@ class BidangController extends Controller
 
         $data = $request->only(['nama_bidang', 'deskripsi']);
 
-        // Proses Upload Gambar
         if ($request->hasFile('gambar')) {
             $fileName = time() . '.' . $request->gambar->extension();
             $request->gambar->move(public_path('assets/bidang'), $fileName);
@@ -55,9 +54,7 @@ class BidangController extends Controller
 
         $data = $request->only(['nama_bidang', 'deskripsi']);
 
-        // Proses Upload Gambar Baru
         if ($request->hasFile('gambar')) {
-            // Hapus gambar lama jika ada
             if ($bidang->gambar && file_exists(public_path('assets/bidang/' . $bidang->gambar))) {
                 unlink(public_path('assets/bidang/' . $bidang->gambar));
             }

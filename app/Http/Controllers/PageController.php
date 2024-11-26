@@ -10,10 +10,8 @@ class PageController extends Controller
 {
     public function home()
     {
-        // Mengambil 5 berita terbaru dengan relasi kategori
         $news = News::with('category')->orderBy('tanggal_berita', 'desc')->get();
 
-        // Mengambil data bidang (jika masih diperlukan)
         $bidangs = Bidang::all();
 
         return view('beranda.home.index', compact('news', 'bidangs'));
@@ -34,15 +32,15 @@ class PageController extends Controller
     {
         return view('beranda.organisasi.index');
     }
+
     public function berita()
     {
-        // Mengambil semua berita dengan relasi kategori
         $news = News::with('category')->orderBy('tanggal_berita', 'desc')->get();
         return view('berita.index', compact('news'));
     }
+
     public function beritaDetail($id)
     {
-        // Ambil berita berdasarkan ID dengan relasi kategori
         $news = News::with('category')->findOrFail($id);
         return view('berita.detail', compact('news'));
     }

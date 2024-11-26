@@ -56,7 +56,6 @@ class AuthController extends Controller
             'role' => 'alumni'
         ]);
 
-        // Generate QR Code
         $qrCode = $user->generateQRCode();
 
         return view('admin.auth.qr-code', compact('qrCode', 'user'));

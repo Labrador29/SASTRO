@@ -28,7 +28,7 @@ class NewsController extends Controller
             'isi' => 'required',
             'tag_id' => 'required|exists:kategori,id',
             'tanggal_berita' => 'required|date',
-            'foto' => 'nullable|image|mimes:jpg,png,jpeg,gif', // Validasi foto
+            'foto' => 'nullable|image|mimes:jpg,png,jpeg,gif',
         ]);
 
         $data = $request->only(['judul', 'isi', 'tag_id', 'tanggal_berita']);
@@ -55,13 +55,12 @@ class NewsController extends Controller
         $request->validate([
             'judul' => 'required|max:255',
             'isi' => 'required',
-            'tag_id' => 'required|exists:kategori,id', // Sesuai kolom `tag_id` Anda
+            'tag_id' => 'required|exists:kategori,id',
             'tanggal_berita' => 'required|date',
         ]);
         $data = $request->only(['judul', 'isi', 'tag_id', 'tanggal_berita']);
 
         if ($request->hasFile('foto')) {
-            // Hapus gambar lama jika ada
             if ($news->foto && file_exists(public_path('assets/berita/' . $news->foto))) {
                 unlink(public_path('assets/berita/' . $news->foto));
             }

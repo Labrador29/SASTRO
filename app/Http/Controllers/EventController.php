@@ -115,13 +115,11 @@ class EventController extends Controller
     // }
     public function processAttendance(Request $request)
     {
-        // Validasi data yang diterima dari request
         $request->validate([
             'qr_code' => 'required|string',
             'event_id' => 'required|integer'
         ]);
 
-        // Cari pengguna berdasarkan QR code
         $user = User::where('qr_code', $request->qr_code)->first();
 
         if (!$user) {
@@ -131,7 +129,6 @@ class EventController extends Controller
             ], 404);
         }
 
-        // Periksa apakah pengguna sudah terdaftar sebagai tamu untuk event ini
         $exists = Attendance::where('user_id', $user->id)
             ->where('event_id', $request->event_id)
             ->exists();
@@ -143,7 +140,6 @@ class EventController extends Controller
             ]);
         }
 
-        // Daftarkan kehadiran pengguna
         Attendance::create([
             'user_id' => $user->id,
             'event_id' => $request->event_id,

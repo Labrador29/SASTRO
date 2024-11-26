@@ -52,7 +52,8 @@
                         <label for="deskripsi" class="block text-sm font-medium">Deskripsi <span
                                 class="text-red-500">*</span></label>
                         <textarea name="deskripsi"
-                            class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
+                            required></textarea>
                     </div>
                     <div class="mb-4">
                         <label for="gambar" class="form-label">Upload Foto <span class="text-red-500">*</span></label>
