@@ -47,19 +47,41 @@ class AuthController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|unique:users',
             'password' => 'required|string|min:8|confirmed',
+            'angkatan' => 'required|integer|min:2000|max:' . now()->year,
+            'instagram' => 'nullable|string|max:255',
+            'facebook' => 'nullable|string|max:255',
+            'x' => 'nullable|string|max:255',
         ]);
 
+        // Hitung selisih tahun dari angkatan (tahun masuk)
+        $angkatan = $request->angkatan;
+        $selisihTahun = now()->year - $angkatan;
+
+        // Tentukan role berdasarkan selisih tahun
+        $role = $selisihTahun > 2 ? 'alumni' : 'pengurus_aktif';
+
+        // Buat user
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'alumni'
+            'role' => $role,
         ]);
 
+        // Buat data di tabel member
+        $user->member()->create([
+            'angkatan' => $angkatan,
+            'instagram' => $request->instagram,
+            'facebook' => $request->facebook,
+            'x' => $request->x,
+        ]);
+
+        // Generate QR Code
         $qrCode = $user->generateQRCode();
 
         return view('admin.auth.qr-code', compact('qrCode', 'user'));
     }
+
 
     public function logout(Request $request)
     {
