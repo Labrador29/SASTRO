@@ -41,25 +41,38 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li
-        class="nav-item {{ request()->is('home') || request()->is('about-us') || request()->is('kegiatan') || request()->is('pembina') || request()->is('struktur-organisasi') ? 'active' : '' }}">
-        <a class="nav-link custom-nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-            aria-expanded="true" aria-controls="collapseTwo">
+    <li class="nav-item">
+        <a class="nav-link custom-nav-link" href="">
             <i class="fa-solid fa-house"></i>
-            <span>Beranda</span>
+            <span>Home</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item {{ request()->is('home') ? 'active' : '' }}" href="">Home</a>
-                <a class="collapse-item {{ request()->is('about-us') ? 'active' : '' }}" href="">About Us</a>
-                <a class="collapse-item {{ request()->is('kegiatan') ? 'active' : '' }}" href="">Kegiatan</a>
-                <a class="collapse-item {{ request()->is('pembina') ? 'active' : '' }}" href="">Pembina</a>
-                <a class="collapse-item {{ request()->is('struktur-organisasi') ? 'active' : '' }}"
-                    href="">Struktur Organisasi</a>
-            </div>
-        </div>
     </li>
+    <li class="nav-item">
+        <a class="nav-link custom-nav-link" href="">
+            <i class="fa-solid fa-users-viewfinder"></i>
+            <span>About Us</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link custom-nav-link" href="">
+            <i class="fa-solid fa-bookmark"></i>
+            <span>Kegiatan</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link custom-nav-link" href="">
+            <i class="fa-solid fa-user-tie"></i>
+            <span>Pembina</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link custom-nav-link" href="">
+            <i class="fa-solid fa-clipboard"></i>
+            <span>Struktur</span>
+        </a>
+    </li>
+
+    <hr class="sidebar-divider">
 
     <!-- Nav Item - Events -->
     <li class="nav-item {{ request()->routeIs('events.index') ? 'active' : '' }}">
