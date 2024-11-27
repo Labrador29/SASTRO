@@ -49,12 +49,6 @@
     </li>
     <li class="nav-item">
         <a class="nav-link custom-nav-link" href="">
-            <i class="fa-solid fa-users-viewfinder"></i>
-            <span>About Us</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link custom-nav-link" href="">
             <i class="fa-solid fa-bookmark"></i>
             <span>Kegiatan</span>
         </a>
@@ -95,14 +89,6 @@
         <a class="nav-link custom-nav-link" href="{{ route('bidang.index') }}">
             <i class="fa-solid fa-layer-group"></i>
             <span>Bidang</span>
-        </a>
-    </li>
-
-    <!-- Nav Item - Admin -->
-    <li class="nav-item {{ request()->is('admin') ? 'active' : '' }}">
-        <a class="nav-link custom-nav-link" href="#">
-            <i class="fa-solid fa-lock"></i>
-            <span>Admin</span>
         </a>
     </li>
 
