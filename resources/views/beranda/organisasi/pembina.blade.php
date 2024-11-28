@@ -137,12 +137,7 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/pembina/pembina1.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
+
                 </div>
                 <div class="member-info">
                     <h4>Drs. Moh. Cholid Adnan </h4>
@@ -153,12 +148,7 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/std.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
+
                 </div>
                 <div class="member-info">
                     <h4>Hanifatul Laillisa S.Pd</h4>
@@ -169,12 +159,7 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/std.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
+
                 </div>
                 <div class="member-info">
                     <h4>Yanuar Rizal Arifin, S.Ak</h4>
@@ -185,12 +170,7 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/std.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
+
                 </div>
                 <div class="member-info">
                     <h4>M. Dimas Putra Pratama </h4>

@@ -2,15 +2,11 @@
 
 @section('container')
     <div class="container mx-auto px-4 py-8">
-        <h1 class="text-3xl font-bold text-gray-800 mb-6">Detail Acara {{ $event->name }} </h1>
-        <p class="mb-6 text-gray-600">Berisi tentang detail sebuah acara yang diselenggarakan oleh pengurus dewan ambalan
-            sastrodikoro</p>
-
         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
             <!-- Detail Acara -->
             <div class="p-6">
                 <div class="flex justify-between items-start mb-6">
-                    <h1 class="text-3xl font-bold">{{ $event->name }}</h1>
+                    <h1 class="text-3xl font-bold">Detail Acara : {{ $event->name }}</h1>
                     @if (auth()->user()->role === 'admin')
                         <div class="space-x-2">
                             <a href="{{ route('admin.events.edit', $event) }}"
@@ -30,22 +26,21 @@
                     @endif
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mb-4">
                     <div>
-                        <h3 class="text-lg font-semibold mb-2">Deskripsi</h3>
+                        <h3 class="text-lg font-semibold mb-1">Deskripsi</h3>
                         <p class="text-gray-600">{{ $event->description }}</p>
                     </div>
                     <div>
-                        <div class="mb-4">
-                            <h3 class="text-lg font-semibold mb-2">Tanggal & Waktu</h3>
-                            <p class="text-gray-600">{{ $event->event_date->format('d M Y H:i') }}</p>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-semibold mb-2">Lokasi</h3>
-                            <p class="text-gray-600">{{ $event->location }}</p>
-                        </div>
+                        <h3 class="text-lg font-semibold mb-1">Lokasi</h3>
+                        <p class="text-gray-600">{{ $event->location }}</p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-1">Tanggal & Waktu</h3>
+                        <p class="text-gray-600">{{ $event->event_date->format('d M Y H:i') }}</p>
                     </div>
                 </div>
+
             </div>
 
             <!-- Daftar Kehadiran -->

@@ -137,12 +137,7 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/arif.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
+
                 </div>
                 <div class="member-info">
                     <h4>ARIEF HAKIM AMIRRULLAH </h4>
@@ -153,12 +148,7 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/camel.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
+
                 </div>
                 <div class="member-info">
                     <h4>CAMELIA TRI ANEISYAH</h4>
@@ -169,12 +159,7 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/fardan.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
+
                 </div>
                 <div class="member-info">
                     <h4>FARDAN WIJI HADI WIJAYA</h4>
@@ -185,12 +170,7 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/andine.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
+
                 </div>
                 <div class="member-info">
                     <h4>KHAULA SYARIVA ANDINE</h4>
@@ -200,12 +180,7 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/ezy.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
+
                 </div>
                 <div class="member-info">
                     <h4>RHEAZIE SETYA A</h4>
@@ -216,12 +191,7 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/devi.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
+
                 </div>
                 <div class="member-info">
                     <h4>DEVI NAFISATUL ULUM</h4>
@@ -232,12 +202,7 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/rafanda.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
+
                 </div>
                 <div class="member-info">
                     <h4>MUHAMMAD DWI RAFANDA</h4>
@@ -248,12 +213,7 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/balqis.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
+
                 </div>
                 <div class="member-info">
                     <h4>MALIKAL BALKIS HASNIAH</h4>
@@ -263,12 +223,7 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/aldi.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
+
                 </div>
                 <div class="member-info">
                     <h4>RIZKY ALDI P</h4>
@@ -279,12 +234,7 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/melan.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
+
                 </div>
                 <div class="member-info">
                     <h4>DWINDA MELAN KURNIASARI</h4>
@@ -295,12 +245,7 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/std.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
+
                 </div>
                 <div class="member-info">
                     <h4>ADRIANSYAH RAMA DHANI</h4>
@@ -311,12 +256,7 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/novel.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
+
                 </div>
                 <div class="member-info">
                     <h4>NOVELINA ZUHRINTO</h4>
@@ -327,12 +267,7 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/std.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
+
                 </div>
                 <div class="member-info">
                     <h4>ROBBY LUCKY RAMADHANI</h4>
@@ -343,12 +278,7 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/nabila.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
+
                 </div>
                 <div class="member-info">
                     <h4>WASIA NABILA FIKRI</h4>
@@ -359,12 +289,6 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/std.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
                 </div>
                 <div class="member-info">
                     <h4>DEFANSYA HUDA PRATAMA</h4>
@@ -375,12 +299,6 @@
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
                     <img src="{{ asset('assets/struktur/bunga.jpg') }}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    </div>
                 </div>
                 <div class="member-info">
                     <h4>GLANDYA BUNGA ANGELITA</h4>

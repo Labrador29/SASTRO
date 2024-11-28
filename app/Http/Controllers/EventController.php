@@ -73,46 +73,6 @@ class EventController extends Controller
         return view('admin.events.scan', compact('event'));
     }
 
-    // public function processAttendance(Request $request)
-    // {
-    //     // Check user by QR code
-    //     $user = User::where('qr_code', $request->qr_code)->first();
-
-    //     if (!$user) {
-    //         return response()->json([
-    //             'success' => false,
-    //             'message' => 'QR Code tidak valid'
-    //         ], 404);
-    //     }
-
-    //     // Check if already attended
-    //     $exists = Attendance::where('user_id', $user->id)
-    //         ->where('event_id', $request->event_id)
-    //         ->exists();
-
-    //     if ($exists) {
-    //         return response()->json([
-    //             'success' => false,
-    //             'message' => 'Alumni sudah melakukan absensi'
-    //         ]);
-    //     }
-
-    //     // Create attendance record
-    //     Attendance::create([
-    //         'user_id' => $user->id,
-    //         'event_id' => $request->event_id,
-    //         'attended_at' => now()
-    //     ]);
-
-    //     return response()->json([
-    //         'success' => true,
-    //         'message' => 'Absensi berhasil',
-    //         'user' => [
-    //             'name' => $user->name,
-    //             'email' => $user->email
-    //         ]
-    //     ]);
-    // }
     public function processAttendance(Request $request)
     {
         $request->validate([
