@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use App\Models\User;
+use App\Models\Bidang;
 use App\Models\Attendance;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,9 @@ class DashboardController extends Controller
     public function index()
     {
         if (auth()->user()->role === 'admin') {
-            $totalAlumni = User::where('role', 'alumni')->count();
+            $totalPengurus = User::where('role', 'pengurus_aktif')->count();
+            $totalPengguna = User::count();
+            $totalBidang = Bidang::count();
             $totalEvents = Event::count();
             $recentEvents = Event::latest()->take(5)->get();
             $recentAttendances = Attendance::with(['user', 'event'])
@@ -21,7 +24,9 @@ class DashboardController extends Controller
                 ->get();
 
             return view('admin.dashboard.admin', compact(
-                'totalAlumni',
+                'totalPengurus',
+                'totalPengguna',
+                'totalBidang',
                 'totalEvents',
                 'recentEvents',
                 'recentAttendances'

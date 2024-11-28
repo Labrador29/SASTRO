@@ -48,9 +48,7 @@ class AuthController extends Controller
             'email' => 'required|string|email|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'angkatan' => 'required|integer|min:2000|max:' . now()->year,
-            'instagram' => 'nullable|string|max:255',
-            'facebook' => 'nullable|string|max:255',
-            'x' => 'nullable|string|max:255',
+            'jabatan' => 'required|string|max:255',
         ]);
 
         // Hitung selisih tahun dari angkatan (tahun masuk)
@@ -65,15 +63,9 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => $role,
-        ]);
-
-        // Buat data di tabel member
-        $user->member()->create([
             'angkatan' => $angkatan,
-            'instagram' => $request->instagram,
-            'facebook' => $request->facebook,
-            'x' => $request->x,
+            'jabatan' => $request->jabatan,
+            'role' => $role,
         ]);
 
         // Generate QR Code

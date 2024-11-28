@@ -68,7 +68,16 @@
                     <p class="text-gray-600 text-sm mt-1">
                         Pilih tahun di mana Anda pertama kali bergabung dengan dewan.
                     </p>
-                </div>  
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="jabatan">
+                        Jabatan
+                    </label>
+                    <input
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="jabatan" type="text" name="jabatan">
+                </div>
 
                 @error('email')
                     <p class="text-red-500 text-xs italic mb-4">{{ $message }}</p>
@@ -92,5 +101,4 @@
                 </div>
             </form>
         </div>
-    </div>
-@endsection
+    @endsection
