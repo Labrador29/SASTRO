@@ -10,9 +10,8 @@ class UserController extends Controller
     public function index()
     {
         // Ambil semua user dengan relasi member dan bidang
-        $users = User::with(['member'])->get();
+        $users = User::all();
 
         return view('admin.users.index', compact('users'));
     }
-    
 }

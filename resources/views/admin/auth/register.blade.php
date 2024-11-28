@@ -70,30 +70,12 @@
             </div>
 
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="instagram">
-                    Instagram
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="jabatan">
+                    jabatan
                 </label>
                 <input
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="instagram" type="text" name="instagram">
-            </div>
-
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="facebook">
-                    Facebook
-                </label>
-                <input
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="facebook" type="text" name="facebook">
-            </div>
-
-            <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="x">
-                    X (Twitter)
-                </label>
-                <input
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    id="x" type="text" name="x">
+                    id="jabatan" type="text" name="jabatan">
             </div>
 
             @error('email')

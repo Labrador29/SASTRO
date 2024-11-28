@@ -14,6 +14,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'angkatan',
+        'jabatan',
         'qr_code',
         'role'
     ];
@@ -27,9 +29,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(Attendance::class);
     }
-    public function member()
+    public function updateRole()
     {
-        return $this->hasOne(Member::class);
+        $selisihTahun = now()->year - $this->angkatan;
+
+        // Update role berdasarkan selisih tahun
+        if ($selisihTahun > 2 && $this->role !== 'alumni') {
+            $this->role = 'alumni';
+            $this->save();
+        }
     }
 
 
@@ -38,8 +46,7 @@ class User extends Authenticatable
     {
         $this->qr_code = uniqid('USR');
         $this->save();
-    
+
         return \SimpleSoftwareIO\QrCode\Facades\QrCode::size(300)->generate($this->qr_code);
     }
-    
 }
