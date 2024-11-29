@@ -30,6 +30,7 @@
                             <th class="py-2 px-4 border-b text-left">Angkatan</th>
                             <th class="py-2 px-4 border-b text-left">Bidang</th>
                             <th class="py-2 px-4 border-b text-left">QR Code</th>
+                            <th class="py-2 px-4 border-b text-left">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,11 +62,29 @@
                                         <span>QR Code belum dihasilkan</span>
                                     @endif
                                 </td>
+                                <td class="py-2 px-4 border-b">
+                                    <div class="d-flex align-items-center">
+                                        <a href=""
+                                            class="btn-success text-white py-1 px-3 rounded me-2 d-inline-flex justify-content-center align-items-center">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </a>
+
+                                        <form action="" method="POST" class="d-inline-flex">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="btn-danger text-white py-1 px-3 rounded d-inline-flex justify-content-center align-items-center">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
             </div>
+
         </div>
     </div>
 @endsection

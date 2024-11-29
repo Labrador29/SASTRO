@@ -69,36 +69,25 @@
                         Pilih tahun di mana Anda pertama kali bergabung dengan dewan.
                     </p>
                 </div>
-
                 <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="jabatan">
-                        Jabatan
-                    </label>
-                    <input
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="jabatan" type="text" name="jabatan">
-                </div>
+                    <div class="flex justify-center mb-4">
+                        <button
+                            class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300 ease-in-out w-full"
+                            type="submit">
+                            Register
+                        </button>
+                    </div>
 
-                @error('email')
-                    <p class="text-red-500 text-xs italic mb-4">{{ $message }}</p>
-                @enderror
-
-                <div class="flex justify-center mb-4">
-                    <button
-                        class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-300 ease-in-out w-full"
-                        type="submit">
-                        Register
-                    </button>
-                </div>
-
-                <div class="text-center">
-                    <a class="inline-block align-baseline font-semibold text-sm text-black" href="{{ route('register') }}">
-                        Sudah punya akun?
-                    </a>
-                    <a class="inline-block align-baseline font-semibold text-sm text-blue-500" href="{{ route('login') }}">
-                        <u> Login Sekarang </u>
-                    </a>
-                </div>
+                    <div class="text-center">
+                        <a class="inline-block align-baseline font-semibold text-sm text-black"
+                            href="{{ route('register') }}">
+                            Sudah punya akun?
+                        </a>
+                        <a class="inline-block align-baseline font-semibold text-sm text-blue-500"
+                            href="{{ route('login') }}">
+                            <u> Login Sekarang </u>
+                        </a>
+                    </div>
             </form>
         </div>
     @endsection

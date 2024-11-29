@@ -26,11 +26,22 @@
             width: auto;
             margin-right: 0;
         }
+
+        .card {
+            max-width: 600px;
+            margin: 0 auto;
+
+        }
+
+        .card-body {
+            padding: 20px;
+
+        }
     </style>
 
-    <div class="card shadow-sm">
+    <div class="card shadow-sm text-black">
         <div class="card-body">
-            <div class="container max-w-6xl mx-auto px-4">
+            <div class="container">
                 <h1 class="text-black font-bold mb-6" style="font-size: 25px;">
                     <a href="{{ route('bidang.index') }}" class="text-gray-500">
                         <i class="fa-solid fa-arrow-left"></i>
