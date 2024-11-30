@@ -47,7 +47,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/events/attendance', [EventController::class, 'processAttendance'])->name('events.attendance');
 });
 
-Route::resource('struktur', StrukturController::class);
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/admin', [DashboardController::class, 'admin'])->name('admin');
@@ -58,6 +57,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::delete('events/{event}', [EventController::class, 'destroy'])->name('admin.events.destroy');
     Route::resource('categories', CategoryController::class); // Pastikan namespace sesuai dengan lokasi controller
     Route::resource('news', NewsController::class); // Pastikan namespace sesuai dengan lokasi controller
+    Route::resource('struktur', StrukturController::class);
 
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::prefix('bidang')->name('bidang.')->group(function () {
