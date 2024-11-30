@@ -134,20 +134,20 @@
 
     <div class="container">
         <div class="row gy-5">
-            @foreach($pengurus as $struktur)
-            <div class="col-lg-3 col-md-6 member">
-                <div class="member-img">
-                    @if($struktur->foto)
-                    <img src="{{ asset($struktur->foto) }}" class="img-fluid" alt="">
-                    @else
-                    <img src="{{ asset('assets/struktur/std.jpg') }}" class="img-fluid" alt="">
-                    @endif
+            @foreach ($pengurus as $struktur)
+                <div class="col-lg-3 col-md-6 member">
+                    <div class="member-img">
+                        @if ($struktur->foto)
+                            <img src="{{ asset($struktur->foto) }}" class="img-fluid" alt="">
+                        @else
+                            <img src="{{ asset('assets/struktur/std.jpg') }}" class="img-fluid" alt="">
+                        @endif
+                    </div>
+                    <div class="member-info">
+                        <h4>{{ $struktur->nama_panjang }}</h4>
+                        <span>{{ $struktur->Jabatan }} | 12345678</span>
+                    </div>
                 </div>
-                <div class="member-info">
-                    <h4>{{ $struktur->nama_panjang }}</h4>
-                    <span>{{ $struktur->Jabatan }}</span>
-                </div>
-            </div>
             @endforeach
         </div>
     </div>

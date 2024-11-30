@@ -1,9 +1,7 @@
 @extends('layouts.admin.main_alum')
 
 @section('container')
-    <div class="container mx-auto px-4 py-8">
-        <h1 class="text-3xl font-bold mb-8">Dashboard Alumni</h1>
-
+    <div class="container mx-auto px-4 py-8 text-black">
         <!-- QR Code -->
         <div class="bg-white rounded-lg shadow mb-8 p-6">
             <h2 class="text-xl font-bold mb-4">QR Code Anda</h2>
