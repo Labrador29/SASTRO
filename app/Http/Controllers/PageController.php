@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bidang;
 use App\Models\News;
+use App\Models\Struktur;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -30,7 +31,9 @@ class PageController extends Controller
 
     public function organisasi()
     {
-        return view('beranda.organisasi.index');
+        $strukturs = Struktur::where('jabatan', 'Pembina')->get();
+        $pengurus = Struktur::where('jabatan', '!=', 'Pembina')->get();
+        return view('beranda.organisasi.index', compact('strukturs', 'pengurus'));
     }
 
     public function berita()

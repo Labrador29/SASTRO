@@ -134,49 +134,21 @@
 
     <div class="container">
         <div class="row gy-5">
+            @foreach($strukturs as $struktur)
             <div class="col-lg-3 col-md-6 member">
                 <div class="member-img">
-                    <img src="{{ asset('assets/pembina/pembina1.jpg') }}" class="img-fluid" alt="">
-
-                </div>
-                <div class="member-info">
-                    <h4>Drs. Moh. Cholid Adnan </h4>
-                    <span>Pembina</span>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 member">
-                <div class="member-img">
+                    @if($struktur->foto)
+                    <img src="{{ asset($struktur->foto) }}" class="img-fluid" alt="">
+                    @else
                     <img src="{{ asset('assets/struktur/std.jpg') }}" class="img-fluid" alt="">
-
+                    @endif
                 </div>
                 <div class="member-info">
-                    <h4>Hanifatul Laillisa S.Pd</h4>
-                    <span>Pembina</span>
+                    <h4>{{ $struktur->nama_panjang }}</h4>
+                    <span>{{ $struktur->Jabatan }}</span>
                 </div>
             </div>
-
-            <div class="col-lg-3 col-md-6 member">
-                <div class="member-img">
-                    <img src="{{ asset('assets/struktur/std.jpg') }}" class="img-fluid" alt="">
-
-                </div>
-                <div class="member-info">
-                    <h4>Yanuar Rizal Arifin, S.Ak</h4>
-                    <span>Pembina</span>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 member">
-                <div class="member-img">
-                    <img src="{{ asset('assets/struktur/std.jpg') }}" class="img-fluid" alt="">
-
-                </div>
-                <div class="member-info">
-                    <h4>M. Dimas Putra Pratama </h4>
-                    <span>Pembina</span>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

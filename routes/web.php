@@ -11,6 +11,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\MassRegistrationController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\StrukturController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/events/{event}/scan', [EventController::class, 'showScanner'])->name('events.scan');
     Route::post('/events/attendance', [EventController::class, 'processAttendance'])->name('events.attendance');
 });
+
+Route::resource('struktur', StrukturController::class);
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/admin', [DashboardController::class, 'admin'])->name('admin');

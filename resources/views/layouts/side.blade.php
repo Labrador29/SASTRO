@@ -59,8 +59,8 @@
             <span>Pembina</span>
         </a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link custom-nav-link" href="">
+    <li class="nav-item {{ request()->routeIs('struktur.index') ? 'active' : '' }}">
+        <a class="nav-link custom-nav-link" href="{{ route('struktur.index') }}">
             <i class="fa-solid fa-clipboard"></i>
             <span>Struktur</span>
         </a>
