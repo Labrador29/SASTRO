@@ -44,10 +44,10 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-            'angkatan' => 'required|integer|min:2000|max:' . now()->year,
+            'name' => 'required|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|confirmed',
+            'angkatan' => 'required|max:' . now()->year,
         ]);
 
         // Hitung selisih tahun dari angkatan (tahun masuk)
@@ -69,8 +69,12 @@ class AuthController extends Controller
         // Generate QR Code
         $qrCode = $user->generateQRCode();
 
+        // Menambahkan flash session untuk pesan sukses
+        session()->flash('success', 'Registrasi berhasil! QR Code Anda telah dibuat.');
+
         return view('admin.auth.qr-code', compact('qrCode', 'user'));
     }
+
 
 
     public function logout(Request $request)

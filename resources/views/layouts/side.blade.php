@@ -47,22 +47,22 @@
             <span>Home</span>
         </a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link custom-nav-link" href="">
+    <li class="nav-item  ">
+        <a class="nav-link custom-nav-link ">
             <i class="fa-solid fa-bookmark"></i>
             <span>Kegiatan</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link custom-nav-link" href="">
-            <i class="fa-solid fa-user-tie"></i>
-            <span>Pembina</span>
         </a>
     </li>
     <li class="nav-item {{ request()->routeIs('struktur.index') ? 'active' : '' }}">
         <a class="nav-link custom-nav-link" href="{{ route('struktur.index') }}">
             <i class="fa-solid fa-clipboard"></i>
             <span>Struktur</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link custom-nav-link" href="">
+            <i class="fa-solid fa-handshake"></i>
+            <span>Sponsor</span>
         </a>
     </li>
 
@@ -89,6 +89,12 @@
         <a class="nav-link custom-nav-link" href="{{ route('bidang.index') }}">
             <i class="fa-solid fa-layer-group"></i>
             <span>Bidang</span>
+        </a>
+    </li>
+    <li class="nav-item {{ request()->routeIs('news.index') ? 'active' : '' }}">
+        <a class="nav-link custom-nav-link" href="{{ route('news.index') }}">
+            <i class="fa-solid fa-newspaper"></i>
+            <span>Berita</span>
         </a>
     </li>
 

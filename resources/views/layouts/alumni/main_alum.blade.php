@@ -31,7 +31,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        @include('layouts.admin.side_alum')
+        @include('layouts.alumni.side_alum')
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -39,7 +39,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                @include('layouts.topbar')
+                @include('layouts.alumni.topbar_alum')
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->

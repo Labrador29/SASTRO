@@ -4,14 +4,14 @@
     <div class="container mx-auto px-4 py-8">
         <div class="w-full md:w-3/4 lg:w-1/2 mx-auto">
             <!-- This ensures the form takes full width on smaller screens and scales down on larger ones -->
-            <h1 class="text-black font-bold mb-6" style="font-size: 30px;">
-                <a href="{{ route('events.index') }}" class="text-gray-500">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </a> Tambah Acara
-            </h1>
 
             <form action="{{ route('admin.events.store') }}" method="POST"
                 class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <h1 class="text-black font-bold mb-6" style="font-size: 30px;">
+                    <a href="{{ route('events.index') }}" class="text-gray-500">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a> Tambah Acara
+                </h1>
                 @csrf
                 <div class="mb-4">
                     <label class="block text-black text-sm font-bold mb-2" for="name">
@@ -52,12 +52,8 @@
                 <div class="flex items-center justify-between">
                     <button type="submit"
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                        Simpan Acara
+                        Simpan
                     </button>
-                    <a href="{{ route('events.index') }}"
-                        class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                        Batal
-                    </a>
                 </div>
             </form>
         </div>

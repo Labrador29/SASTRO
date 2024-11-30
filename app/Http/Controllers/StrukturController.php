@@ -9,7 +9,7 @@ class StrukturController extends Controller
 {
     public function index()
     {
-        $strukturs = Struktur::paginate(3);
+        $strukturs = Struktur::paginate(5);
         return view('admin.struktur.index', compact('strukturs'));
     }
 

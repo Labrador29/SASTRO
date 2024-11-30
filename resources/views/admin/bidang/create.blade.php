@@ -72,7 +72,7 @@
                             class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
                             accept="image/*">
                     </div>
-                    <button type="submit" class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600">
+                    <button type="submit" class="btn-primary text-white py-2 px-4 rounded">
                         Simpan
                     </button>
                 </form>

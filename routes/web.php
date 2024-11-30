@@ -3,15 +3,17 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\EventController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\BidangController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\MassRegistrationController;
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\BidangController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\StrukturController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\view\KegiatanController;
+use App\Http\Controllers\view\KegiatanControlller;
+use App\Http\Controllers\MassRegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,13 +52,14 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/admin', [DashboardController::class, 'admin'])->name('admin');
+    Route::get('/kegiatan', [KegiatanController::class, 'index']);
     Route::get('events/create', [EventController::class, 'create'])->name('admin.events.create');
     Route::post('events', [EventController::class, 'store'])->name('admin.events.store');
     Route::get('events/{event}/edit', [EventController::class, 'edit'])->name('admin.events.edit');
     Route::put('events/{event}', [EventController::class, 'update'])->name('admin.events.update');
     Route::delete('events/{event}', [EventController::class, 'destroy'])->name('admin.events.destroy');
-    Route::resource('categories', CategoryController::class); // Pastikan namespace sesuai dengan lokasi controller
-    Route::resource('news', NewsController::class); // Pastikan namespace sesuai dengan lokasi controller
+    Route::resource('categories', CategoryController::class);
+    Route::resource('news', NewsController::class);
     Route::resource('struktur', StrukturController::class);
 
     Route::get('/users', [UserController::class, 'index'])->name('users.index');

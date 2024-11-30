@@ -1,4 +1,4 @@
-@extends('layouts.admin.main_alum')
+@extends('layouts.alumni.main_alum')
 
 @section('container')
     <div class="container mx-auto px-4 py-8 text-black">
@@ -6,7 +6,11 @@
         <div class="bg-white rounded-lg shadow mb-8 p-6">
             <h2 class="text-xl font-bold mb-4">QR Code Anda</h2>
             <div class="flex justify-center mb-4">
-                {!! QrCode::size(200)->generate(auth()->user()->qr_code) !!}
+                @if (auth()->user()->qr_code)
+                    {!! QrCode::size(200)->generate(auth()->user()->qr_code) !!}
+                @else
+                    {!! QrCode::size(200)->generate(auth()->user()->id) !!}
+                @endif
             </div>
             <p class="text-center text-gray-600">Tunjukkan QR Code ini saat absensi acara</p>
         </div>

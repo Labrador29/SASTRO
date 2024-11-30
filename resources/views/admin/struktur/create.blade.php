@@ -42,8 +42,11 @@
                             <label for="foto">Foto</label>
                             <input type="file" name="foto" id="foto" class="form-control">
                         </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-success px-4">Simpan</button>
+                        <div class="flex items-center justify-between">
+                            <button type="submit"
+                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                                Simpan
+                            </button>
                         </div>
                     </form>
                 </div>

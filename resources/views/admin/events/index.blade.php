@@ -1,17 +1,14 @@
 @extends('layouts.main')
 @section('container')
-    <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Daftar Acara </h1>
-    <p class="mb-4">Masukkan daftar Acara yang akan datang untuk mengetahui lebih detail</p>
-
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-            <h6 class="m-0 font-weight-bold text-primary">Daftar Acara</h6>
-            <a href="{{ route('admin.events.create') }}" class="btn-primary text-white py-2 px-2 rounded hover:bg-blue"><i
-                    class="fa-solid fa-plus"></i>
-                Tambah Acara
-            </a>
+            <h6 class="m-0 font-weight-bold text-primary">Daftar Acara
+                <a href="{{ route('admin.events.create') }}" class="btn-primary text-white py-2 px-2 rounded hover:bg-blue"><i
+                        class="fa-solid fa-plus"></i>
+                    Tambah
+                </a>
+            </h6>
         </div>
         @if (session('success'))
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
@@ -19,6 +16,16 @@
             </div>
         @endif
         <div class="card-body">
+            <form action="" method="GET" class="mb-4">
+                <div class="row align-items-center">
+                    <div class="col-md-9">
+                        <input type="text" name="search" class="form-control" value="{{ request()->get('search') }}">
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-primary w-100">Cari</button>
+                    </div>
+                </div>
+            </form>
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead style="background-color: rgb(183, 0, 255);;">

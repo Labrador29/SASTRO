@@ -42,7 +42,7 @@
                     <span>Welcome Back Ksatria!</span>
                 </a>
             </h2>
-            <p class="text-gray-600 text-center mb-6">Enter your email and password</p>
+            <p class="text-gray-600 text-center mb-6">Masukkan Email dan Password</p>
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf

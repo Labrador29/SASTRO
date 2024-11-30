@@ -18,12 +18,12 @@
                     <a class="nav-link {{ request()->is('about') ? 'active' : '' }}" href="/about">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('kegiatan') ? 'active' : '' }}" href="/kegiatan">Kegiatan</a>
+                    <a class="nav-link {{ request()->is('kegiatan') ? 'active' : '' }}" href="/kegiatan">Activity</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle {{ request()->is('organisasi') ? 'active' : '' }}" href="#"
                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Organisasi
+                        Organization
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/organisasi">Pembina</a></li>

@@ -9,9 +9,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        // Ambil semua user dengan relasi member dan bidang
-        $users = User::all();
-
+        $users = User::paginate(5);
         return view('admin.users.index', compact('users'));
     }
 }
