@@ -48,7 +48,6 @@ class AuthController extends Controller
             'email' => 'required|string|email|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'angkatan' => 'required|integer|min:2000|max:' . now()->year,
-            'jabatan' => 'required|string|max:255',
         ]);
 
         // Hitung selisih tahun dari angkatan (tahun masuk)
@@ -64,7 +63,6 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'angkatan' => $angkatan,
-            'jabatan' => $request->jabatan,
             'role' => $role,
         ]);
 
