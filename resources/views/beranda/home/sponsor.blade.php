@@ -1,25 +1,30 @@
-<style>
-    .smaller-img {
-        max-width: 300px;
-        height: auto;
-    }
-</style>
-<div class="text-center custom-margin" style="margin-top: 100px;">
-    <h2 class="fw-bold" data-aos="fade-up" data-aos-duration="500">Mitra & Partner</h2>
-    <p data-aos="fade-up" data-aos-duration="1000">Kami bangga dapat berkolaborasi dengan berbagai mitra dan partner yang
-        terpercaya untuk mencapai kesuksesan
-        bersama.</p>
-</div>
+    <style>
+        .smaller-img {
+            max-width: 150px;
+            /* Atur ukuran maksimal logo */
+            height: auto;
+        }
 
-<div class="container mt-4" data-aos="fade-up" data-aos-duration="1500">
-    <div class="row justify-content-center">
-        <div class="col-md-6 mb-4 d-flex justify-content-center">
-            <img src="{{ asset('assets/sponsor/s2.png') }}" class="img-fluid" alt="Partner 1">
-        </div>
+        .custom-margin {
+            margin-top: 100px;
+        }
+    </style>
+    <!-- Bagian Header -->
+    <div class="text-center custom-margin">
+        <h2 class="fw-bold" data-aos="fade-up" data-aos-duration="500">Mitra & Partner</h2>
+        <p data-aos="fade-up" data-aos-duration="1000">
+            Kami bangga dapat berkolaborasi dengan berbagai mitra dan partner yang terpercaya untuk mencapai kesuksesan bersama.
+        </p>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-md-12 d-flex justify-content-center">
-            <img src="{{ asset('assets/sponsor/s1.png') }}" class="img-fluid smaller-img" alt="Partner 2">
+
+    <!-- Bagian Logo -->
+    <div class="container mt-4" data-aos="fade-up" data-aos-duration="1500">
+        <div class="row justify-content-center g-1">
+            @foreach ($sponsor as $item)
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center align-items-center">
+                <img src="{{ asset('assets/sponsor/' . $item->logo) }}" class="img-fluid smaller-img" alt="Logo">
+            </div>
+            @endforeach
         </div>
+
     </div>
-</div>

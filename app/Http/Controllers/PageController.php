@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bidang;
 use App\Models\News;
 use App\Models\Struktur;
+use App\Models\Sponsor;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -12,10 +13,11 @@ class PageController extends Controller
     public function home()
     {
         $news = News::with('category')->orderBy('tanggal_berita', 'desc')->get();
+        $sponsor = Sponsor::all();
 
         $bidangs = Bidang::all();
 
-        return view('beranda.home.index', compact('news', 'bidangs'));
+        return view('beranda.home.index', compact('news', 'bidangs', 'sponsor'));
     }
 
 
