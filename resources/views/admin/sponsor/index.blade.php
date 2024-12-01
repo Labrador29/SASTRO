@@ -30,9 +30,8 @@
                     <thead style="background-color: rgb(183, 0, 255);;">
                         <tr class="text-white">
                             <th>No</th>
-                            <th>Nama Kegiatan</th>
-                            <th>Tanggal</th>
-                            <th>Lokasi</th>
+                            <th>Nama Sponsor</th>
+                            <th>Masa Sponsor</th>
                             <th>Status</th>
                             <th>Aksi</th>
                         </tr>
@@ -40,9 +39,8 @@
                     <tfoot>
                         <tr>
                             <th>No</th>
-                            <th>Nama Kegiatan</th>
-                            <th>Tanggal</th>
-                            <th>Lokasi</th>
+                            <th>Nama Sponsor</th>
+                            <th>Masa Sponsor</th>
                             <th>Status</th>
                             <th>Aksi</th>
                         </tr>

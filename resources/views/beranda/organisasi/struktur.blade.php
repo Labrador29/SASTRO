@@ -8,7 +8,8 @@
 
     .section-title {
         text-align: center;
-        padding-bottom: 60px;
+        padding-bottom: 40px;
+        /* Jarak lebih kecil */
         position: relative;
     }
 
@@ -43,8 +44,25 @@
         }
     }
 
-    .section-title p {
-        margin-bottom: 0;
+    .search-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 0 20px;
+    }
+
+    .search-form .form-select {
+        width: 450px;
+        text-align: center;
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    .search-form .btn {
+        width: 50px;
+        padding: 8px 10px;
+        font-size: 14px
     }
 
     .team .member {
@@ -71,31 +89,6 @@
         object-fit: cover;
     }
 
-    .team .member .member-img .social {
-        position: absolute;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.6);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 2;
-        padding-bottom: 20px;
-        transition: 0.3s;
-        visibility: hidden;
-        opacity: 0;
-    }
-
-    .team .member .member-img .social a {
-        transition: 0.3s;
-        color: var(--contrast-color);
-        font-size: 20px;
-        margin: 0 8px;
-    }
-
-    .team .member .member-img .social a:hover {
-        color: #f4b351;
-    }
-
     .team .member .member-info {
         margin-top: 30px;
     }
@@ -113,23 +106,27 @@
         color: color-mix(in srgb, var(--default-color), transparent 40%);
         margin-bottom: 10px;
     }
-
-    .team .member .member-info p {
-        margin-bottom: 0;
-        font-size: 14px;
-    }
-
-    .team .member:hover .member-img .social {
-        padding-bottom: 0;
-        visibility: visible;
-        opacity: 1;
-    }
 </style>
 
 <section id="team" class="team section light-background mb-5" data-aos="fade-up" data-aos-duration="1000"
     style="margin-top: 80px;">
     <div class="container section-title mt-5 w-75">
         <h2>Struktur Dewan Ambalan Sastrodikoro</h2>
+        <form action="" method="GET" class="search-form" style="margin-top: 20px;">
+            <select name="year" class="form-select" style="border: 1px solid black;">
+                <option value="" selected disabled>Pilih Tahun Struktur</option>
+                @php
+                    $currentYear = date('Y');
+                    $startYear = $currentYear - 10; // Menampilkan 10 tahun terakhir
+                @endphp
+                @for ($year = $currentYear; $year >= $startYear; $year--)
+                    <option value="{{ $year }}" {{ request()->get('year') == $year ? 'selected' : '' }}>
+                        {{ $year }}
+                    </option>
+                @endfor
+            </select>
+            <button type="submit" class="btn btn-primary">Cari</button>
+        </form>
     </div>
 
     <div class="container">
@@ -145,7 +142,7 @@
                     </div>
                     <div class="member-info">
                         <h4>{{ $struktur->nama_panjang }}</h4>
-                        <span>{{ $struktur->Jabatan }} | 12345678</span>
+                        <span>{{ $struktur->Jabatan }}</span>
                     </div>
                 </div>
             @endforeach
