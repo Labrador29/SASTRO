@@ -47,8 +47,8 @@
             <span>Home</span>
         </a>
     </li>
-    <li class="nav-item  ">
-        <a class="nav-link custom-nav-link ">
+    <li class="nav-item {{ request()->routeIs('kegiatan.index') ? 'active' : '' }}">
+        <a class="nav-link custom-nav-link" href="{{ route('kegiatan.index') }}">
             <i class="fa-solid fa-bookmark"></i>
             <span>Kegiatan</span>
         </a>
@@ -59,8 +59,14 @@
             <span>Struktur</span>
         </a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link custom-nav-link" href="">
+    <li class="nav-item {{ request()->routeIs('proker.index') ? 'active' : '' }}">
+        <a class="nav-link custom-nav-link" href="{{ route('proker.index') }}">
+            <i class="fa-solid fa-chart-column"></i>
+            <span>Program Kerja</span>
+        </a>
+    </li>
+    <li class="nav-item {{ request()->routeIs('sponsor.index') ? 'active' : '' }}">
+        <a class="nav-link custom-nav-link" href="{{ route('sponsor.index') }}">
             <i class="fa-solid fa-handshake"></i>
             <span>Sponsor</span>
         </a>

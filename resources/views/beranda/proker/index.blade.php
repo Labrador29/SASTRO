@@ -8,4 +8,6 @@
             </div>
         </div>
     </section>
+
+    @include('beranda.proker.proker')
 @endsection

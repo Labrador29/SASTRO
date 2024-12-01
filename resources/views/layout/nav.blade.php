@@ -21,10 +21,11 @@
                     <a class="nav-link {{ request()->is('kegiatan') ? 'active' : '' }}" href="/kegiatan">Kegiatan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link{{ request()->is('program') ? 'active' : '' }}" href="/program">Program Kerja</a>
+                    <a class="nav-link {{ request()->is('proker') ? 'active' : '' }}" href="/proker">Program Kerja</a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Materi</a>
+                    <a class="nav-link {{ request()->is('materi') ? 'active' : '' }}" href="/materi">Materi</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle {{ request()->is('organisasi') ? 'active' : '' }}" href="#"

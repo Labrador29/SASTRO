@@ -10,7 +10,7 @@
             <div class="col-lg-4 col-md-6 mb-4 d-flex justify-content-center"
                 style="padding-left: 1px; padding-right: 1px;">
                 <div class="card h-100 text-center shadow-sm" style="border-radius: 15px; width: 400px; height: 400px;">
-                    <img src="{{ asset('assets/keg1.jpg') }}" class="card-img-top" alt="Bidang 1"
+                    <img src="{{ asset('assets/berita/1731994539.jpg') }}" class="card-img-top" alt="Bidang 1"
                         style="width: 100%; height: 200px; object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title fw-bold">Kemah Pemuda (KEMDA)</h5>

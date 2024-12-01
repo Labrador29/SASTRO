@@ -29,9 +29,14 @@ class PageController extends Controller
         return view('beranda.kegiatan.index');
     }
 
-    public function program()
+    public function proker()
     {
-        return view('beranda.program.index');
+        return view('beranda.proker.index');
+    }
+
+    public function materi()
+    {
+        return view('beranda.materi.index');
     }
 
     public function organisasi()

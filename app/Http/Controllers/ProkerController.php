@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class KegiatanController extends Controller
+class ProkerController extends Controller
 {
     public function index()
     {
-        return view('admin.kegiatan.index');
+        return view('admin.proker.index');
     }
 }

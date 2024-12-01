@@ -8,11 +8,14 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\BidangController;
+use App\Http\Controllers\ProkerController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\StrukturController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MassRegistrationController;
+use App\Http\Controllers\SponsorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +31,8 @@ use App\Http\Controllers\MassRegistrationController;
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/kegiatan', [PageController::class, 'kegiatan'])->name('kegiatan');
-Route::get('/program', [PageController::class, 'program']);
+Route::get('/proker', [PageController::class, 'proker'])->name('proker');
+Route::get('/materi', [PageController::class, 'materi'])->name('materi');
 Route::get('/organisasi', [PageController::class, 'organisasi'])->name('organisasi');
 Route::get('/berita', [PageController::class, 'berita'])->name('berita.index');
 Route::get('/berita/{id}', [PageController::class, 'beritaDetail'])->name('berita.detail');
@@ -58,8 +62,11 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::put('events/{event}', [EventController::class, 'update'])->name('admin.events.update');
     Route::delete('events/{event}', [EventController::class, 'destroy'])->name('admin.events.destroy');
     Route::resource('categories', CategoryController::class);
+    Route::resource('kegiatan', KegiatanController::class);
     Route::resource('news', NewsController::class);
     Route::resource('struktur', StrukturController::class);
+    Route::resource('proker', ProkerController::class);
+    Route::resource('sponsor', SponsorController::class);
 
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::prefix('bidang')->name('bidang.')->group(function () {
