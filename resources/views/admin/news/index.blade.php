@@ -35,9 +35,8 @@
                             <th>Judul</th>
                             <th>Kategori</th>
                             <th>Tanggal</th>
-                            <th>foto</th>
+                            <th>Foto</th>
                             <th>Aksi</th>
-
                         </tr>
                     </thead>
                     <tfoot>
@@ -46,14 +45,14 @@
                             <th>Judul</th>
                             <th>Kategori</th>
                             <th>Tanggal</th>
-                            <th>foto</th>
+                            <th>Foto</th>
                             <th>Aksi</th>
                         </tr>
                     </tfoot>
                     <tbody>
                         @foreach ($news as $item)
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $loop->iteration + ($news->currentPage() - 1) * $news->perPage() }}</td>
                                 <td>{{ $item->judul }}</td>
                                 <td>{{ $item->category->name ?? '-' }}</td>
                                 <td>{{ $item->tanggal_berita }}</td>
@@ -80,7 +79,35 @@
                             </tr>
                         @endforeach
                     </tbody>
+
                 </table>
+
+                <!-- Custom Pagination -->
+                <div class="d-flex justify-content-end mt-3">
+                    <ul class="pagination">
+                        <!-- Tombol Sebelumnya -->
+                        @if ($news->onFirstPage())
+                            <li class="page-item disabled">
+                                <span class="page-link">Sebelumnya</span>
+                            </li>
+                        @else
+                            <li class="page-item">
+                                <a class="page-link" href="{{ $news->previousPageUrl() }}" rel="prev">Sebelumnya</a>
+                            </li>
+                        @endif
+
+                        <!-- Tombol Selanjutnya -->
+                        @if ($news->hasMorePages())
+                            <li class="page-item">
+                                <a class="page-link" href="{{ $news->nextPageUrl() }}" rel="next">Selanjutnya</a>
+                            </li>
+                        @else
+                            <li class="page-item disabled">
+                                <span class="page-link">Selanjutnya</span>
+                            </li>
+                        @endif
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

@@ -9,21 +9,27 @@
             <i class="fa-solid fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0"> <!-- Add ms-auto to align items to the right -->
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" aria-current="page"
-                        href="/">Home</a>
+                        href="/">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('about') ? 'active' : '' }}" href="/about">About Us</a>
+                    <a class="nav-link {{ request()->is('about') ? 'active' : '' }}" href="/about">Profil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('kegiatan') ? 'active' : '' }}" href="/kegiatan">Activity</a>
+                    <a class="nav-link {{ request()->is('kegiatan') ? 'active' : '' }}" href="/kegiatan">Kegiatan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link{{ request()->is('program') ? 'active' : '' }}" href="/program">Program Kerja</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Materi</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle {{ request()->is('organisasi') ? 'active' : '' }}" href="#"
                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Organization
+                        Organisasi
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/organisasi">Pembina</a></li>

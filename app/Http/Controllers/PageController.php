@@ -29,6 +29,11 @@ class PageController extends Controller
         return view('beranda.kegiatan.index');
     }
 
+    public function program()
+    {
+        return view('beranda.program.index');
+    }
+
     public function organisasi()
     {
         $strukturs = Struktur::where('jabatan', 'Pembina')->get();

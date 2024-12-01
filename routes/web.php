@@ -2,7 +2,7 @@
 
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
+
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
@@ -10,9 +10,8 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\BidangController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\StrukturController;
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\view\KegiatanController;
-use App\Http\Controllers\view\KegiatanControlller;
 use App\Http\Controllers\MassRegistrationController;
 
 /*
@@ -29,6 +28,7 @@ use App\Http\Controllers\MassRegistrationController;
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/kegiatan', [PageController::class, 'kegiatan'])->name('kegiatan');
+Route::get('/program', [PageController::class, 'program']);
 Route::get('/organisasi', [PageController::class, 'organisasi'])->name('organisasi');
 Route::get('/berita', [PageController::class, 'berita'])->name('berita.index');
 Route::get('/berita/{id}', [PageController::class, 'beritaDetail'])->name('berita.detail');
@@ -52,7 +52,6 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/admin', [DashboardController::class, 'admin'])->name('admin');
-    Route::get('/kegiatan', [KegiatanController::class, 'index']);
     Route::get('events/create', [EventController::class, 'create'])->name('admin.events.create');
     Route::post('events', [EventController::class, 'store'])->name('admin.events.store');
     Route::get('events/{event}/edit', [EventController::class, 'edit'])->name('admin.events.edit');
