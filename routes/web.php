@@ -57,6 +57,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/admin', [DashboardController::class, 'admin'])->name('admin');
+    Route::get('/home', [DashboardController::class, 'home'])->name('admin.home');
     Route::get('events/create', [EventController::class, 'create'])->name('admin.events.create');
     Route::post('events', [EventController::class, 'store'])->name('admin.events.store');
     Route::get('events/{event}/edit', [EventController::class, 'edit'])->name('admin.events.edit');

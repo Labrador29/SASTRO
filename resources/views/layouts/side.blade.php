@@ -41,8 +41,8 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <li class="nav-item">
-        <a class="nav-link custom-nav-link" href="">
+    <li class="nav-item  {{ request()->routeIs('admin.home') ? 'active' : '' }}">
+        <a class="nav-link custom-nav-link" href="{{ route('admin.home') }}">
             <i class="fa-solid fa-house"></i>
             <span>Home</span>
         </a>

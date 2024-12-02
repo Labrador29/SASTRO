@@ -70,12 +70,12 @@ class PageController extends Controller
     public function berita()
     {
         $news = News::with('category')->orderBy('tanggal_berita', 'desc')->get();
-        return view('berita.index', compact('news'));
+        return view('beranda.berita.index', compact('news'));
     }
 
     public function beritaDetail($id)
     {
         $news = News::with('category')->findOrFail($id);
-        return view('berita.detail', compact('news'));
+        return view('beranda.berita.detail', compact('news'));
     }
 }

@@ -33,7 +33,6 @@
                             <th>Nama Kegiatan</th>
                             <th>Tanggal</th>
                             <th>Lokasi</th>
-                            <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -43,7 +42,6 @@
                             <th>Nama Kegiatan</th>
                             <th>Tanggal</th>
                             <th>Lokasi</th>
-                            <th>Status</th>
                             <th>Aksi</th>
                         </tr>
                     </tfoot>

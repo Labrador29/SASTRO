@@ -56,12 +56,10 @@ class StrukturController extends Controller
         ]);
 
         if ($request->hasFile('foto')) {
-            // Hapus foto lama
             if ($struktur->foto && file_exists(public_path($struktur->foto))) {
                 unlink(public_path($struktur->foto));
             }
 
-            // Simpan foto baru
             $file = $request->file('foto');
             $filename = time() . '_' . $file->getClientOriginalName();
             $file->move(public_path('assets/struktur'), $filename);
@@ -75,7 +73,6 @@ class StrukturController extends Controller
 
     public function destroy(Struktur $struktur)
     {
-        // Hapus foto jika ada
         if ($struktur->foto && file_exists(public_path($struktur->foto))) {
             unlink(public_path($struktur->foto));
         }
