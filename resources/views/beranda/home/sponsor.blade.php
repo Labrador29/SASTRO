@@ -9,7 +9,14 @@
     .custom-margin {
         margin-top: 100px;
     }
+
+    .sponsor-container .row+.row {
+        margin-top: 30px;
+    }
 </style>
+
+
+
 
 <!-- Bagian Header -->
 <div class="text-center custom-margin">
@@ -20,13 +27,15 @@
     </p>
 </div>
 
-<!-- Bagian Logo -->
-<div class="container mt-4" data-aos="fade-up" data-aos-duration="1500">
-    <div class="row justify-content-center g-1">
-        @foreach ($sponsor as $item)
-            <div class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex justify-content-center align-items-center">
-                <img src="{{ asset('assets/sponsor/' . $item->logo) }}" class="img-fluid smaller-img" alt="Logo">
-            </div>
-        @endforeach
-    </div>
+<div class="container sponsor-container mt-4" data-aos="fade-up" data-aos-duration="1500">
+    @foreach ($sponsor->chunk(4) as $chunk)
+        <div class="row justify-content-center">
+            @foreach ($chunk as $item)
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 d-flex justify-content-center align-items-center">
+                    <img src="{{ asset('assets/sponsor/' . $item->logo) }}" class="img-fluid smaller-img"
+                        alt="Logo">
+                </div>
+            @endforeach
+        </div>
+    @endforeach
 </div>
