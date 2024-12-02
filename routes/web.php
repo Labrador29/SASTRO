@@ -16,6 +16,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MassRegistrationController;
 use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\MassStrukturController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,4 +78,6 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
         Route::put('/{bidang}', [BidangController::class, 'update'])->name('update');
         Route::delete('/{bidang}', [BidangController::class, 'destroy'])->name('destroy');
     });
+    Route::get('import', [MassStrukturController::class, 'showForm'])->name('import.form');
+    Route::post('import', [MassStrukturController::class, 'import'])->name('import');
 });

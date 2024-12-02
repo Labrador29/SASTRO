@@ -32,15 +32,19 @@
                             <th>ID</th>
                             <th>Nama Panjang</th>
                             <th>Jabatan</th>
+                            <th>NTA</th>
+                            <th>tahun</th>
                             <th>Foto</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>ID</th>
+                        <th>ID</th>
                             <th>Nama Panjang</th>
                             <th>Jabatan</th>
+                            <th>NTA</th>
+                            <th>tahun</th>
                             <th>Foto</th>
                             <th>Aksi</th>
                         </tr>
@@ -51,6 +55,8 @@
                                 <td>{{ $loop->iteration + ($strukturs->currentPage() - 1) * $strukturs->perPage() }}</td>
                                 <td>{{ $struktur->nama_panjang }}</td>
                                 <td>{{ $struktur->Jabatan }}</td>
+                                <td>{{ $struktur->NTA }}</td>
+                                <td>{{ $struktur->tahun }}</td>
                                 <td>
                                     @if ($struktur->foto)
                                         <img src="{{ asset($struktur->foto) }}" alt="Foto" width="50">

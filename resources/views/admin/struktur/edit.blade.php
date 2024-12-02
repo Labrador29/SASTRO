@@ -29,6 +29,15 @@
             </select>
         </div>
         <div class="form-group">
+            <label for="NTA">NTA</label>
+            <input type="number" name="NTA" id="NTA" class="form-control"value="{{ $struktur->NTA }}" required>
+        </div>
+        <!-- Tahun -->
+        <div class="form-group">
+            <label for="tahun">Tahun</label>
+            <input type="number" name="tahun" id="tahun" class="form-control" placeholder="Masukkan Tahun (4 digit, misal 2024)" min="2000" max="{{ date('Y') }}"value="{{ $struktur->tahun }}" required>
+        </div>
+        <div class="form-group">
             <label for="foto">Foto</label>
             <input type="file" name="foto" id="foto" class="form-control">
             @if($struktur->foto)

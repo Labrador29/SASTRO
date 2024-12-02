@@ -108,22 +108,17 @@
     }
 </style>
 
-<section id="team" class="team section light-background mb-5" data-aos="fade-up" data-aos-duration="1000"
-    style="margin-top: 80px;">
+<section id="team" class="team section light-background mb-5" data-aos="fade-up" data-aos-duration="1000">
     <div class="container section-title mt-5 w-75">
-        <h2>Struktur Dewan Ambalan Sastrodikoro</h2>
+        <h2>Struktur Pengurus Dewan Ambalan</h2>
         <form action="" method="GET" class="search-form" style="margin-top: 20px;">
             <select name="year" class="form-select" style="border: 1px solid black;">
-                <option value="" selected disabled>Pilih Tahun Struktur</option>
-                @php
-                    $currentYear = date('Y');
-                    $startYear = $currentYear - 10; // Menampilkan 10 tahun terakhir
-                @endphp
-                @for ($year = $currentYear; $year >= $startYear; $year--)
-                    <option value="{{ $year }}" {{ request()->get('year') == $year ? 'selected' : '' }}>
-                        {{ $year }}
-                    </option>
-                @endfor
+                <option value="" disabled>Pilih Tahun Struktur</option>
+                @foreach ($years as $year)
+                <option value="{{ $year }}" {{ $filterYear == $year ? 'selected' : '' }}>
+                    {{ $year }}
+                </option>
+                @endforeach
             </select>
             <button type="submit" class="btn btn-primary">Cari</button>
         </form>
@@ -131,21 +126,26 @@
 
     <div class="container">
         <div class="row gy-5">
+            @if ($pengurus->isEmpty())
+            <p class="text-center">Tidak ada data pengurus untuk tahun {{ $filterYear }}</p>
+            @else
             @foreach ($pengurus as $struktur)
-                <div class="col-lg-3 col-md-6 member">
-                    <div class="member-img">
-                        @if ($struktur->foto)
-                            <img src="{{ asset($struktur->foto) }}" class="img-fluid" alt="">
-                        @else
-                            <img src="{{ asset('assets/struktur/std.jpg') }}" class="img-fluid" alt="">
-                        @endif
-                    </div>
-                    <div class="member-info">
-                        <h4>{{ $struktur->nama_panjang }}</h4>
-                        <span>{{ $struktur->Jabatan }}</span>
-                    </div>
+            <div class="col-lg-3 col-md-6 member">
+                <div class="member-img">
+                    @if ($struktur->foto)
+                    <img src="{{ asset($struktur->foto) }}" class="img-fluid" alt="Foto {{ $struktur->nama_panjang }}">
+                    @else
+                    <img src="{{ asset('assets/struktur/std.jpg') }}" class="img-fluid" alt="Foto Default">
+                    @endif
                 </div>
+                <div class="member-info">
+                    <h4>{{ $struktur->nama_panjang }}</h4>
+                    <span>{{ $struktur->NTA }}</span>
+                    <span>{{ $struktur->Jabatan }}</span>
+                </div>
+            </div>
             @endforeach
+            @endif
         </div>
     </div>
 </section>

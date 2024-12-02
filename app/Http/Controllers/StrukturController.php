@@ -23,6 +23,8 @@ class StrukturController extends Controller
         $validated = $request->validate([
             'nama_panjang' => 'required|string|max:255',
             'jabatan' => 'required|string|max:255',
+            'NTA' => 'required|string|max:50',
+            'tahun' => 'required|integer|min:2000|max:' . date('Y'),
             'foto' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
         ]);
 
@@ -40,7 +42,7 @@ class StrukturController extends Controller
 
     public function edit(Struktur $struktur)
     {
-        return view('struktur.edit', compact('struktur'));
+        return view('admin.struktur.edit', compact('struktur'));
     }
 
     public function update(Request $request, Struktur $struktur)
@@ -48,6 +50,8 @@ class StrukturController extends Controller
         $validated = $request->validate([
             'nama_panjang' => 'required|string|max:255',
             'jabatan' => 'required|string|max:255',
+            'NTA' => 'required|string|max:50',
+            'tahun' => 'required|integer|min:2000|max:' . date('Y'),
             'foto' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
         ]);
 

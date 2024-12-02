@@ -41,12 +41,31 @@ class PageController extends Controller
         return view('beranda.materi.index');
     }
 
-    public function organisasi()
+    public function organisasi(Request $request)
     {
+        // Ambil tahun dari parameter URL atau gunakan tahun terbaru secara default
+        $selectedYear = $request->get('year');
+        $defaultYear = Struktur::where('jabatan', '!=', 'Pembina')->max('tahun'); // Tahun terbaru untuk data selain Pembina
+        $filterYear = $selectedYear ?? $defaultYear;
+
+        // Ambil data pembina (tidak terpengaruh filter tahun)
         $strukturs = Struktur::where('jabatan', 'Pembina')->get();
-        $pengurus = Struktur::where('jabatan', '!=', 'Pembina')->get();
-        return view('beranda.organisasi.index', compact('strukturs', 'pengurus'));
+
+        // Ambil data pengurus berdasarkan tahun
+        $pengurus = Struktur::where('jabatan', '!=', 'Pembina')
+            ->where('tahun', $filterYear)
+            ->get();
+
+        // Ambil daftar tahun untuk dropdown
+        $years = Struktur::where('jabatan', '!=', 'Pembina')
+            ->select('tahun')
+            ->distinct()
+            ->orderBy('tahun', 'desc')
+            ->pluck('tahun');
+
+        return view('beranda.organisasi.index', compact('strukturs', 'pengurus', 'filterYear', 'years'));
     }
+
 
     public function berita()
     {

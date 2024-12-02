@@ -3,7 +3,6 @@
 namespace App\Imports;
 
 use App\Models\User;
-use App\Models\Member;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
@@ -29,15 +28,6 @@ class MassUserImport implements ToCollection
 
         // Generate QR Code untuk setiap pengguna
         $user->generateQRCode();
-
-        // Buat data member
-        Member::create([
-            'user_id' => $user->id,
-            'angkatan' => $row[3], // Kolom Angkatan
-            'instagram' => $row[4], // Kolom Instagram
-            'facebook' => $row[5], // Kolom Facebook
-            'x' => $row[6], // Kolom X
-        ]);
     }
 }
 
