@@ -6,6 +6,7 @@ use App\Models\Bidang;
 use App\Models\News;
 use App\Models\Struktur;
 use App\Models\Sponsor;
+use App\Models\proker;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -33,7 +34,8 @@ class PageController extends Controller
 
     public function proker()
     {
-        return view('beranda.proker.index');
+        $proker = proker::all();
+        return view('beranda.proker.index', compact('proker'));
     }
 
     public function materi()
