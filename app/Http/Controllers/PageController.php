@@ -7,6 +7,7 @@ use App\Models\News;
 use App\Models\Struktur;
 use App\Models\Sponsor;
 use App\Models\proker;
+use App\Models\Kegiatan;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -29,7 +30,10 @@ class PageController extends Controller
 
     public function kegiatan()
     {
-        return view('beranda.kegiatan.index');
+        $Kegiatan = Kegiatan::all();
+        $operasional = Kegiatan::where('jenis', 'operasional')->get();
+        $partisipasi = Kegiatan::where('jenis', 'partisipasi')->get();
+        return view('beranda.kegiatan.index', compact('operasional', 'partisipasi'));
     }
 
     public function proker()
