@@ -61,7 +61,7 @@
                                 class="text-red-500">*</span></label>
                         <textarea name="isi"
                             class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
-                            placeholder="Masukkan isi berita" rows="5" required></textarea>
+                            placeholder="Masukkan isi berita" rows="10" required></textarea>
                     </div>
                     <div class="mb-4">
                         <label for="tag_id" class="block text-sm font-medium">Kategori <span

@@ -14,7 +14,9 @@
                     onclick="window.location.href='https://forms.gle/3u4UjrbW5EuJ5fjbA'">Daftar</button>
             </div>
             <div class="col-lg-6">
-                <img src="{{ asset('assets/about/about.png') }}" class="img-fluid" style="border-radius: 15px;" alt="">
+                @foreach ($pendaftaran as $item)
+                <img src="{{ asset('assets/halaman/' . $item->foto) }}" class="img-fluid" style="border-radius: 15px;" alt="">
+                @endforeach
             </div>
         </div>
     </div>

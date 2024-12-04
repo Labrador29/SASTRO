@@ -16,7 +16,9 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MassRegistrationController;
 use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\MassStrukturController;
+use App\Models\Halaman;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,6 +71,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::resource('struktur', StrukturController::class);
     Route::resource('proker', ProkerController::class);
     Route::resource('sponsor', SponsorController::class);
+    Route::resource('halaman', HalamanController::class);
 
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::prefix('bidang')->name('bidang.')->group(function () {

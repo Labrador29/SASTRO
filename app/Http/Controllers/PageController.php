@@ -8,6 +8,7 @@ use App\Models\Struktur;
 use App\Models\Sponsor;
 use App\Models\proker;
 use App\Models\Kegiatan;
+use App\Models\Halaman;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -16,10 +17,12 @@ class PageController extends Controller
     {
         $news = News::with('category')->orderBy('tanggal_berita', 'desc')->get();
         $sponsor = Sponsor::all();
-
         $bidangs = Bidang::all();
+        $background = Halaman::where('bagian', 'background')->get();
+        $about = Halaman::where('bagian', 'about')->get();
+        $pendaftaran = Halaman::where('bagian', 'pendaftaran')->get();
 
-        return view('beranda.home.index', compact('news', 'bidangs', 'sponsor'));
+        return view('beranda.home.index', compact('news', 'bidangs', 'sponsor', 'background', 'about', 'pendaftaran'));
     }
 
 

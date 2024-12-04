@@ -2,7 +2,9 @@
     <div class="container">
         <div class="row align-items-center py-5">
             <div class="col-lg-4 text-center">
-                <img src="{{ asset('assets/about.jpg') }}" class="img-fluid rounded-3" alt="About Image">
+                @foreach ($about as $item)
+                <img src="{{ asset('assets/halaman/' . $item->foto) }}" class="img-fluid rounded-3" alt="About Image">
+                @endforeach
             </div>
             <div class="col-lg-8 text-end">
                 <h2 class="fw-bold">About Dewan Ambalan Sastrodikoro</h2>
