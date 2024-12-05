@@ -73,9 +73,10 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::resource('sponsor', SponsorController::class);
     Route::resource('halaman', HalamanController::class);
     Route::resource('materi', MateriController::class);
+    Route::resource('users', UserController::class);
 
 
-    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    // Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::prefix('bidang')->name('bidang.')->group(function () {
         Route::get('/', [BidangController::class, 'index'])->name('index');
         Route::get('/create', [BidangController::class, 'create'])->name('create');

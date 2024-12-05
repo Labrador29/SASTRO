@@ -10,7 +10,7 @@ class HalamanController extends Controller
 {
     public function index()
     {
-        $halaman = halaman::all();
+        $halaman = Halaman::all();
         return view('admin.halaman.index', compact('halaman'));
     }
     public function create()

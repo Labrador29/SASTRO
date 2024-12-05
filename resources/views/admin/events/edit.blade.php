@@ -9,7 +9,7 @@
                 </a> Edit Acara
             </h1>
 
-            <form action="/events/{{ $event->id }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <form action="/admin/events/{{ $event->id }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 @csrf
                 @method('PUT')
 

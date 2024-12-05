@@ -48,14 +48,14 @@
             </h1>
             <hr>
             <br>
-            <form action="{{ route('sponsor.update', $sponsor) }}" method="POST" enctype="multipart/form-data"
+            <form action="{{ route('sponsor.update', $Sponsor) }}" method="POST" enctype="multipart/form-data"
                 class="form-container">
                 @csrf
                 @method('PUT')
                 <div class="mb-4">
                     <label for="nama" class="block text-sm font-medium">Nama Sponsor <span
                             class="text-red-500">*</span></label>
-                    <input type="text" name="nama" value="{{ $sponsor->nama }}"
+                    <input type="text" name="nama" value="{{ $Sponsor->nama }}"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
                         placeholder="Masukkan nama berita" required>
                 </div>
@@ -70,7 +70,7 @@
                 <div class="mb-4">
                     <label for="tanggal" class="block text-sm font-medium">Tanggal Sponsor <span
                             class="text-red-500">*</span></label>
-                    <input type="date" name="tanggal" value="{{ $sponsor->tanggal }}"
+                    <input type="date" name="tanggal" value="{{ $Sponsor->tanggal }}"
                         class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
                         required>
                 </div>

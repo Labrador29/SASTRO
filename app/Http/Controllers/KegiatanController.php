@@ -68,4 +68,16 @@ class KegiatanController extends Controller
 
         return redirect()->route('kegiatan.index')->with('success', 'Kegiatan berhasil diperbarui.');
     }
+    public function destroy(Kegiatan $kegiatan)
+    {
+        // Hapus foto terkait jika ada
+        if ($kegiatan->foto && File::exists(public_path('assets/kegiatan/' . $kegiatan->foto))) {
+            File::delete(public_path('assets/kegiatan/' . $kegiatan->foto));
+        }
+
+        // Hapus data kegiatan
+        $kegiatan->delete();
+
+        return redirect()->route('kegiatan.index')->with('success', 'Kegiatan berhasil dihapus.');
+    }
 }
