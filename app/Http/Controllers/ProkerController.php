@@ -26,7 +26,7 @@ class ProkerController extends Controller
     public function create()
     {
         // Render the form view
-        return view('proker.Form');
+        return view('admin.proker.Form');
     }
 
     /**

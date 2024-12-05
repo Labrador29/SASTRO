@@ -27,6 +27,14 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
+        $user = User::where('email', $request->email)->first();
+
+        if (!$user) {
+            return back()->withErrors([
+                'email' => 'Email belum terdaftar.',
+            ]);
+        }
+
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended('/dashboard');
@@ -36,6 +44,7 @@ class AuthController extends Controller
             'email' => 'Email atau password salah.',
         ]);
     }
+
 
     public function showRegister()
     {
@@ -51,14 +60,11 @@ class AuthController extends Controller
             'angkatan' => 'required|max:' . now()->year,
         ]);
 
-        // Hitung selisih tahun dari angkatan (tahun masuk)
         $angkatan = $request->angkatan;
         $selisihTahun = now()->year - $angkatan;
 
-        // Tentukan role berdasarkan selisih tahun
         $role = $selisihTahun > 2 ? 'alumni' : 'pengurus_aktif';
 
-        // Buat user
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -67,10 +73,8 @@ class AuthController extends Controller
             'role' => $role,
         ]);
 
-        // Generate QR Code
         $qrCode = $user->generateQRCode();
 
-        // Menambahkan flash session untuk pesan sukses
         session()->flash('success', 'Registrasi berhasil! QR Code Anda telah dibuat.');
 
         return view('admin.auth.qr-code', compact('qrCode', 'user'));
