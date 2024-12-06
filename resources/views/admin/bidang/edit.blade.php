@@ -20,16 +20,17 @@
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
-                        <label for="nama_bidang" class="form-label">Nama Bidang</label>
+                        <label for="nama_bidang" class="form-label">Nama Bidang <span class="text-red-500">*</span></label>
                         <input type="text" name="nama_bidang" id="nama_bidang" class="form-control"
                             value="{{ $bidang->nama_bidang }}" required>
                     </div>
                     <div class="mb-3">
-                        <label for="deskripsi" class="form-label">Deskripsi</label>
+                        <label for="deskripsi" class="form-label">Deskripsi <span class="text-red-500">*</span></label>
                         <textarea name="deskripsi" id="deskripsi" class="form-control">{{ $bidang->deskripsi }}</textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="gambar" class="form-label">Upload Foto Baru</label>
+                        <label for="gambar" class="form-label">Upload Foto Baru <span
+                                class="text-red-500">*</span></label>
                         <input type="file" name="gambar" id="gambar" class="form-control" accept="image/*">
                         <small class="text-secondary">Kosongkan jika tidak ingin mengganti gambar.</small>
                     </div>

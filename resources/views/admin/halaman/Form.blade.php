@@ -26,7 +26,7 @@
 
                         <!-- Bagian -->
                         <div class="form-group mb-3">
-                            <label for="bagian" class="form-label">Bagian</label>
+                            <label for="bagian" class="form-label">Bagian <span class="text-red-500">*</span></label>
                             <select name="bagian" id="bagian" class="form-control" required>
                                 <option value="" disabled selected>Pilih bagian</option>
                                 <option value="background"
@@ -42,7 +42,7 @@
 
                         <!-- Foto -->
                         <div class="form-group mb-3">
-                            <label for="foto">Foto</label>
+                            <label for="foto">Foto <span class="text-red-500">*</span></label>
                             <input type="file" name="foto" id="foto" class="form-control" accept="image/*">
                             @if (isset($halaman) && $halaman->foto)
                                 <div class="mt-2">

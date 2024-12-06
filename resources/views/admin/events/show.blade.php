@@ -6,7 +6,12 @@
             <!-- Detail Acara -->
             <div class="p-6">
                 <div class="flex justify-between items-start mb-6">
-                    <h1 class="text-3xl font-bold">Detail Acara : {{ $event->name }}</h1>
+                    <div class="flex items-center">
+                        <a href="{{ route('events.index') }}" class="text-gray-500 hover:text-gray-700 mr-3">
+                            <i class="fa-solid fa-arrow-left text-2xl"></i>
+                        </a>
+                        <h1 class="text-3xl font-bold">Detail Acara : {{ $event->name }}</h1>
+                    </div>
                     @if (auth()->user()->role === 'admin')
                         <div class="space-x-2">
                             <a href="{{ route('admin.events.edit', $event) }}"

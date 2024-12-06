@@ -66,8 +66,8 @@
                         <small class="text-gray-500">Kosongkan jika tidak ingin mengganti logo.</small>
                     </div>
                     <div class="mb-4">
-                        <label for="tanggal" class="block text-sm font-medium">Tanggal Sponsor <span
-                                class="text-red-500">*</span></label>
+                        <label for="tanggal" class="block text-sm font-medium">Tanggal Sponsor <span class="text-red-500">
+                                *</span></label>
                         <input type="date" name="tanggal" value="{{ $Sponsor->tanggal }}"
                             class="shadow appearance-none border rounded w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"
                             required>

@@ -20,11 +20,11 @@
                     <form action="{{ route('struktur.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group mb-3">
-                            <label for="nama_panjang">Nama Panjang</label>
+                            <label for="nama_panjang">Nama Panjang <span class="text-red-500">*</span></label>
                             <input type="text" name="nama_panjang" id="nama_panjang" class="form-control" required>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="jabatan" class="form-label">Jabatan</label>
+                            <label for="jabatan" class="form-label">Jabatan <span class="text-red-500">*</span></label>
                             <select class="form-control" id="jabatan" name="jabatan" required>
                                 <option value="">Pilih Kategori</option>
                                 <option value="Pembina">Pembina</option>
@@ -43,18 +43,18 @@
                             </select>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="NTA">NTA</label>
+                            <label for="NTA">NTA <span class="text-red-500">*</span></label>
                             <input type="number" name="NTA" id="NTA" class="form-control" required>
                         </div>
                         <!-- Tahun -->
                         <div class="form-group mb-3">
-                            <label for="tahun">Tahun</label>
+                            <label for="tahun">Tahun <span class="text-red-500">*</span></label>
                             <input type="number" name="tahun" id="tahun" class="form-control"
                                 placeholder="Masukkan Tahun (4 digit, misal 2024)" min="2000" max="{{ date('Y') }}"
                                 required>
                         </div>
                         <div class="form-group mb-4">
-                            <label for="foto">Foto</label>
+                            <label for="foto">Foto <span class="text-red-500">*</span></label>
                             <input type="file" name="foto" id="foto" class="form-control">
                         </div>
 

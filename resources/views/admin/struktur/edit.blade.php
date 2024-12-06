@@ -49,12 +49,12 @@
                     @csrf
                     @method('PUT')
                     <div class="form-group">
-                        <label for="nama_panjang">Nama Panjang</label>
+                        <label for="nama_panjang">Nama Panjang <span class="text-red-500">*</span></label>
                         <input type="text" name="nama_panjang" id="nama_panjang" class="form-control"
                             value="{{ $struktur->nama_panjang }}" required>
                     </div>
                     <div class="form-group">
-                        <label for="jabatan">Jabatan</label>
+                        <label for="jabatan">Jabatan <span class="text-red-500">*</span></label>
                         <select class="form-control" id="jabatan" name="jabatan" required>
                             <option value="Pembina" {{ $struktur->Jabatan == 'Pembina' ? 'selected' : '' }}>Pembina</option>
                             <option value="Pradana Putra" {{ $struktur->Jabatan == 'Pradana Putra' ? 'selected' : '' }}>
@@ -89,12 +89,12 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="NTA">NTA</label>
+                        <label for="NTA">NTA <span class="text-red-500">*</span></label>
                         <input type="number" name="NTA" id="NTA" class="form-control"
                             value="{{ $struktur->NTA }}" required>
                     </div>
                     <div class="form-group">
-                        <label for="tahun">Tahun</label>
+                        <label for="tahun">Tahun <span class="text-red-500">*</span></label>
                         <input type="number" name="tahun" id="tahun" class="form-control"
                             placeholder="Masukkan Tahun (4 digit, misal 2024)" min="2000" max="{{ date('Y') }}"
                             value="{{ $struktur->tahun }}" required>
@@ -102,7 +102,7 @@
 
                     <!-- Dropzone for Foto -->
                     <div class="form-group">
-                        <label for="foto">Foto</label>
+                        <label for="foto">Foto <span class="text-red-500">*</span></label>
                         <div id="foto" class="dropzone">
                             <input type="file" name="foto" id="foto-input" />
                         </div>

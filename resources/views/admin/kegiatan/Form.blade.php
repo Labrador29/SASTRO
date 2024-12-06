@@ -25,28 +25,28 @@
 
                         <!-- Nama Kegiatan -->
                         <div class="form-group mb-3">
-                            <label for="nama">Nama Kegiatan</label>
+                            <label for="nama">Nama Kegiatan <span class="text-red-500">*</span></label>
                             <input type="text" name="nama" id="nama" class="form-control"
                                 value="{{ old('nama', $kegiatan->nama ?? '') }}" required>
                         </div>
 
                         <!-- Deskripsi Kegiatan -->
                         <div class="form-group mb-3">
-                            <label for="deskripsi">Deskripsi Kegiatan</label>
+                            <label for="deskripsi">Deskripsi Kegiatan <span class="text-red-500">*</span></label>
                             <input type="text" name="deskripsi" id="deskripsi" class="form-control"
                                 value="{{ old('deskripsi', $kegiatan->deskripsi ?? '') }}" required>
                         </div>
 
                         <!-- Tanggal -->
                         <div class="form-group mb-3">
-                            <label for="tanggal">Tanggal</label>
+                            <label for="tanggal">Tanggal <span class="text-red-500">*</span></label>
                             <input type="date" name="tanggal" id="tanggal" class="form-control"
                                 value="{{ old('tanggal', $kegiatan->tanggal ?? '') }}" required>
                         </div>
 
                         <!-- Jenis -->
                         <div class="form-group mb-3">
-                            <label for="jenis" class="form-label">Jenis</label>
+                            <label for="jenis" class="form-label">Jenis <span class="text-red-500">*</span></label>
                             <select name="jenis" id="jenis" class="form-control" required>
                                 <option value="" disabled selected>Pilih Jenis</option>
                                 <option value="Operasional"
@@ -60,7 +60,7 @@
 
                         <!-- Foto -->
                         <div class="form-group mb-3">
-                            <label for="foto">Foto</label>
+                            <label for="foto">Foto <span class="text-red-500">*</span></label>
                             <input type="file" name="foto" id="foto" class="form-control" accept="image/*">
                             @if (isset($kegiatan) && $kegiatan->foto)
                                 <div class="mt-2">

@@ -23,17 +23,17 @@
                             @method('PUT')
                         @endif
                         <div class="form-group mb-3">
-                            <label for="nama">Nama Program</label>
+                            <label for="nama">Nama Program <span class="text-red-500">*</span></label>
                             <input type="text" name="nama" id="nama" class="form-control"
                                 value="{{ old('nama', $proker->nama ?? '') }}" required>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="lokasi">lokasi Program</label>
+                            <label for="lokasi">lokasi Program <span class="text-red-500">*</span></label>
                             <input type="text" name="lokasi" id="lokasi" class="form-control"
                                 value="{{ old('lokasi', $proker->lokasi ?? '') }}" required>
                         </div>
                         <div class="form-group mb-3">
-                            <label for="status" class="form-label">Status</label>
+                            <label for="status" class="form-label">Status <span class="text-red-500">*</span></label>
                             <select name="status" id="status" class="form-control" required>
                                 @foreach (['Terlaksana', 'Proses', 'Tidak Terlaksana'] as $status)
                                     <option value="{{ $status }}"
@@ -45,7 +45,7 @@
                         </div>
                         <!-- Tahun -->
                         <div class="form-group mb-3">
-                            <label for="Tanggal">Tanggal</label>
+                            <label for="Tanggal">Tanggal <span class="text-red-500">*</span></label>
                             <input type="date" name="Tanggal" id="Tanggal" class="form-control"
                                 value="{{ old('Tanggal', $proker->Tanggal ?? '') }}" required>
                         </div>
