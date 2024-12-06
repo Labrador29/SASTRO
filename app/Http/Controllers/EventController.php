@@ -12,12 +12,21 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::orderBy('event_date', 'desc')->get();
-        return view('admin.events.index', compact('events'));
+        $events = Event::paginate(5);
+
+        return view(
+            'admin.events.index',
+            ['title' => 'Admin | Acara'],
+            compact('events')
+        );
     }
 
     public function create()
     {
-        return view('admin.events.create');
+        return view(
+            'admin.events.create',
+            ['title' => 'Admin | Tambah Acara']
+        );
     }
 
     public function store(Request $request)
@@ -38,12 +47,20 @@ class EventController extends Controller
     public function show(Event $event)
     {
         $attendances = $event->attendances()->with('user')->get();
-        return view('admin.events.show', compact('event', 'attendances'));
+        return view(
+            'admin.events.show',
+            ['title' => 'Admin | Detail Acara'],
+            compact('event', 'attendances')
+        );
     }
 
     public function edit(Event $event)
     {
-        return view('admin.events.edit', compact('event'));
+        return view(
+            'admin.events.edit',
+            ['title' => 'Admin | Edit Acara'],
+            compact('event')
+        );
     }
 
     public function update(Request $request, Event $event)
@@ -68,9 +85,14 @@ class EventController extends Controller
         return redirect()->route('events.index')
             ->with('success', 'Acara berhasil dihapus!');
     }
+
     public function showScanner(Event $event)
     {
-        return view('admin.events.scan', compact('event'));
+        return view(
+            'admin.events.scan',
+            ['title' => 'Admin | Scan QR'],
+            compact('event')
+        );
     }
 
     public function processAttendance(Request $request)

@@ -6,11 +6,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="shortcut icon" href="{{ asset('icons/da.ico') }}">
 
-    <title>Sasdik Scout | Dashboard</title>
+    <title>{{ $title ?? 'Sasdik Scout | Dashboard' }}</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('css/admin/all.min.css') }}" rel="stylesheet" type="text/css">

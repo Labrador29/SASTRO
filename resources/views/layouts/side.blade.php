@@ -44,7 +44,7 @@
     <li class="nav-item  {{ request()->routeIs('halaman.index') ? 'active' : '' }}">
         <a class="nav-link custom-nav-link" href="{{ route('halaman.index') }}">
             <i class="fa-solid fa-house"></i>
-            <span>Home</span>
+            <span>Beranda</span>
         </a>
     </li>
     <li class="nav-item {{ request()->routeIs('kegiatan.index') ? 'active' : '' }}">

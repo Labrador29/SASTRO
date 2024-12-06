@@ -11,12 +11,21 @@ class SponsorController extends Controller
     public function index()
     {
         $sponsor = Sponsor::paginate(5);
-        return view('admin.sponsor.index', compact('sponsor'));
+        return view(
+            'admin.sponsor.index',
+            ['title' => 'Admin | Sponsor'],
+            compact('sponsor')
+        );
     }
+
     public function create()
     {
-        return view('admin.sponsor.create');
+        return view(
+            'admin.sponsor.create',
+            ['title' => 'Admin | Tambah Struktur']
+        );
     }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -37,10 +46,16 @@ class SponsorController extends Controller
 
         return redirect()->route('sponsor.index')->with('success', 'Data Sponsor berhasil ditambahkan!');
     }
+
     public function edit(Sponsor $Sponsor)
     {
-        return view('admin.sponsor.edit', compact('Sponsor'));
+        return view(
+            'admin.sponsor.edit',
+            ['title' => 'Admin | Edit Struktur'],
+            compact('Sponsor')
+        );
     }
+
     public function update(Request $request, sponsor $sponsor)
     {
         $request->validate([
@@ -64,6 +79,7 @@ class SponsorController extends Controller
 
         return redirect()->route('sponsor.index')->with('success', 'Data sponsor berhasil diubah.');
     }
+
     public function destroy(Sponsor $Sponsor)
     {
         $Sponsor->delete();

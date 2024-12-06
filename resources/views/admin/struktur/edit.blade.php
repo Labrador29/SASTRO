@@ -3,16 +3,46 @@
 @section('container')
     <style>
         .custom-shadow {
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .back-arrow {
+            font-size: 30px;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+        }
+
+        .header-title {
+            font-size: 30px;
+            text-align: center;
         }
     </style>
+
     <div class="container">
-        <h1 class="text-black font-bold mb-6" style="font-size: 30px;">
-            <a href="{{ route('struktur.index') }}" class="text-gray-500">
-                <i class="fa-solid fa-arrow-left"></i>
-            </a> Edit Struktur Dewan Ambalan
-        </h1>
         <div class="card custom-shadow mb-4 text-black">
+            <div class="header-container">
+                <!-- Left Arrow Icon -->
+                <a href="{{ route('struktur.index') }}" class="text-gray-500 back-arrow">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <h1 class="text-black font-bold mb-2 header-title">
+                    Edit Struktur Dewan Ambalan
+                </h1>
+            </div>
+
             <div class="card-body">
                 <form action="{{ route('struktur.update', $struktur->id) }}" method="POST" enctype="multipart/form-data"
                     id="edit-struktur-form">

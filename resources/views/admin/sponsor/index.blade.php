@@ -78,6 +78,41 @@
                         @endforeach
                     </tbody>
                 </table>
+
+                <div class="d-flex justify-content-between mt-3">
+                    <div>
+                        <p class="mb-0">Menampilkan {{ $sponsor->firstItem() }} - {{ $sponsor->lastItem() }} dari
+                            {{ $sponsor->total() }} data</p>
+                    </div>
+
+                    <div>
+                        <ul class="pagination">
+                            <!-- Tombol Sebelumnya -->
+                            @if ($sponsor->onFirstPage())
+                                <li class="page-item disabled">
+                                    <span class="page-link">Sebelumnya</span>
+                                </li>
+                            @else
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $sponsor->previousPageUrl() }}"
+                                        rel="prev">Sebelumnya</a>
+                                </li>
+                            @endif
+
+                            <!-- Tombol Selanjutnya -->
+                            @if ($sponsor->hasMorePages())
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $sponsor->nextPageUrl() }}"
+                                        rel="next">Selanjutnya</a>
+                                </li>
+                            @else
+                                <li class="page-item disabled">
+                                    <span class="page-link">Selanjutnya</span>
+                                </li>
+                            @endif
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

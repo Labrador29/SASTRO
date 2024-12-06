@@ -11,13 +11,22 @@ class KegiatanController extends Controller
     public function index()
     {
         $kegiatan = Kegiatan::all();
-        return view('admin.kegiatan.index', compact('kegiatan'));
+        $kegiatan = Kegiatan::paginate(5);
+        return view(
+            'admin.kegiatan.index',
+            ['title' => 'Admin | Kegiatan'],
+            compact('kegiatan')
+        );
     }
+
     public function create()
     {
-        // Render the form view
-        return view('admin.kegiatan.Form');
+        return view(
+            'admin.kegiatan.Form',
+            ['title' => 'Admin | Tambah Kegiatan']
+        );
     }
+
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -36,12 +45,17 @@ class KegiatanController extends Controller
 
         Kegiatan::create($validated);
 
-        return redirect()->route('kegiatan.index')->with('success', 'Kegiatan berhasil ditambahkan.');
+        return redirect()->route('kegiatan.index')
+            ->with('success', 'Kegiatan berhasil ditambahkan.');
     }
+
     public function edit(Kegiatan $kegiatan)
     {
-        // Render the form view with kegi$kegiatan data
-        return view('admin.kegiatan.Form', compact('kegiatan'));
+        return view(
+            'admin.kegiatan.Form',
+            ['title' => 'Admin | Edit Kegiatan'],
+            compact('kegiatan')
+        );
     }
 
     public function update(Request $request, Kegiatan $kegiatan)
@@ -55,7 +69,6 @@ class KegiatanController extends Controller
         ]);
 
         if ($request->hasFile('foto')) {
-            // Hapus foto lama jika ada
             if ($kegiatan->foto && File::exists(public_path('assets/kegiatan/' . $kegiatan->foto))) {
                 File::delete(public_path('assets/kegiatan/' . $kegiatan->foto));
             }
@@ -66,18 +79,19 @@ class KegiatanController extends Controller
 
         $kegiatan->update($validated);
 
-        return redirect()->route('kegiatan.index')->with('success', 'Kegiatan berhasil diperbarui.');
+        return redirect()->route('kegiatan.index')
+            ->with('success', 'Kegiatan berhasil diperbarui.');
     }
+
     public function destroy(Kegiatan $kegiatan)
     {
-        // Hapus foto terkait jika ada
         if ($kegiatan->foto && File::exists(public_path('assets/kegiatan/' . $kegiatan->foto))) {
             File::delete(public_path('assets/kegiatan/' . $kegiatan->foto));
         }
 
-        // Hapus data kegiatan
         $kegiatan->delete();
 
-        return redirect()->route('kegiatan.index')->with('success', 'Kegiatan berhasil dihapus.');
+        return redirect()->route('kegiatan.index')
+            ->with('success', 'Kegiatan berhasil dihapus.');
     }
 }

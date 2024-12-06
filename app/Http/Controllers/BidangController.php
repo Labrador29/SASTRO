@@ -9,13 +9,22 @@ class BidangController extends Controller
 {
     public function index()
     {
-        $bidang = Bidang::all();
-        return view('admin.bidang.index', compact('bidang'));
+        $bidang = Bidang::paginate(5);  // Paginate the results
+
+        return view(
+            'admin.bidang.index',
+            ['title' => 'Admin | Bidang'],
+            compact('bidang')
+        );
     }
+
 
     public function create()
     {
-        return view('admin.bidang.create');
+        return view(
+            'admin.bidang.create',
+            ['title' => 'Admin | Tambah Bidang']
+        );
     }
 
     public function store(Request $request)
@@ -41,7 +50,11 @@ class BidangController extends Controller
 
     public function edit(Bidang $bidang)
     {
-        return view('admin.bidang.edit', compact('bidang'));
+        return view(
+            'admin.bidang.edit',
+            ['title' => 'Admin | Edit Bidang'],
+            compact('bidang')
+        );
     }
 
     public function update(Request $request, Bidang $bidang)

@@ -24,9 +24,9 @@
                     <a class="nav-link {{ request()->is('proker') ? 'active' : '' }}" href="/proker">Program Kerja</a>
                 </li>
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link {{ request()->is('materi') ? 'active' : '' }}" href="/materi">Materi</a>
-                </li>
+                </li> --}}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle {{ request()->is('organisasi') ? 'active' : '' }}" href="#"
                         role="button" data-bs-toggle="dropdown" aria-expanded="false">

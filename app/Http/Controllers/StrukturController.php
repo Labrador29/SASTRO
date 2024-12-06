@@ -7,15 +7,21 @@ use Illuminate\Http\Request;
 
 class StrukturController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $strukturs = Struktur::paginate(5);
-        return view('admin.struktur.index', compact('strukturs'));
+
+        return view('admin.struktur.index', compact('strukturs'))
+            ->with('title', 'Admin | Struktur');
     }
+
 
     public function create()
     {
-        return view('admin.struktur.create');
+        return view(
+            'admin.struktur.create',
+            ['title' => 'Admin | Tambah Struktur']
+        );
     }
 
     public function store(Request $request)
@@ -37,12 +43,17 @@ class StrukturController extends Controller
 
         Struktur::create($validated);
 
-        return redirect()->route('struktur.index')->with('success', 'Data berhasil ditambahkan.');
+        return redirect()->route('struktur.index')
+            ->with('success', 'Data berhasil ditambahkan.');
     }
 
     public function edit(Struktur $struktur)
     {
-        return view('admin.struktur.edit', compact('struktur'));
+        return view(
+            'admin.struktur.edit',
+            ['title' => 'Admin | Edit Struktur'],
+            compact('struktur')
+        );
     }
 
     public function update(Request $request, Struktur $struktur)
@@ -68,7 +79,8 @@ class StrukturController extends Controller
 
         $struktur->update($validated);
 
-        return redirect()->route('struktur.index')->with('success', 'Data berhasil diperbarui.');
+        return redirect()->route('struktur.index')
+            ->with('success', 'Data berhasil diperbarui.');
     }
 
     public function destroy(Struktur $struktur)
@@ -79,6 +91,7 @@ class StrukturController extends Controller
 
         $struktur->delete();
 
-        return redirect()->route('struktur.index')->with('success', 'Data berhasil dihapus.');
+        return redirect()->route('struktur.index')
+            ->with('success', 'Data berhasil dihapus.');
     }
 }

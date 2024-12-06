@@ -10,7 +10,10 @@ class MassRegistrationController extends Controller
 {
     public function showForm()
     {
-        return view('admin.auth.mass-register');
+        return view(
+            'admin.auth.mass-register',
+            ['title' => 'Admin | Tambah User']
+        );
     }
 
     public function processForm(Request $request)

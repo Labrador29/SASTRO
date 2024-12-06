@@ -114,7 +114,11 @@
                     <div class="text-center">
                         <a class="inline-block align-baseline font-semibold text-sm text-black"
                             href="{{ route('login') }}">
-                            Sudah punya akun? Login Sekarang
+                            Belum punya akun?
+                        </a>
+                        <a class="inline-block align-baseline font-semibold text-sm text-blue-500"
+                            href="{{ route('login') }}">
+                            <u> Login Sekarang </u>
                         </a>
                     </div>
                 </div>

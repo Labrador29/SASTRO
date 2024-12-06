@@ -23,7 +23,7 @@ class DashboardController extends Controller
                 ->take(5)
                 ->get();
 
-            return view('admin.dashboard.admin', compact(
+            return view('admin.dashboard.admin', ['title' => 'Admin | Dashboard'], compact(
                 'totalPengurus',
                 'totalPengguna',
                 'totalBidang',

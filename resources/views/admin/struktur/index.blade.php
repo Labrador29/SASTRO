@@ -40,7 +40,7 @@
                     </thead>
                     <tfoot>
                         <tr>
-                        <th>ID</th>
+                            <th>ID</th>
                             <th>Nama Panjang</th>
                             <th>Jabatan</th>
                             <th>NTA</th>
@@ -82,34 +82,41 @@
                     </tbody>
                 </table>
 
-                <!-- Custom Pagination -->
-                <div class="d-flex justify-content-end mt-3">
-                    <ul class="pagination">
-                        <!-- Tombol Sebelumnya -->
-                        @if ($strukturs->onFirstPage())
-                            <li class="page-item disabled">
-                                <span class="page-link">Sebelumnya</span>
-                            </li>
-                        @else
-                            <li class="page-item">
-                                <a class="page-link" href="{{ $strukturs->previousPageUrl() }}"
-                                    rel="prev">Sebelumnya</a>
-                            </li>
-                        @endif
+                <div class="d-flex justify-content-between mt-3">
+                    <div>
+                        <p class="mb-0">Menampilkan {{ $strukturs->firstItem() }} - {{ $strukturs->lastItem() }} dari
+                            {{ $strukturs->total() }} data</p>
+                    </div>
 
-                        <!-- Tombol Selanjutnya -->
-                        @if ($strukturs->hasMorePages())
-                            <li class="page-item">
-                                <a class="page-link" href="{{ $strukturs->nextPageUrl() }}" rel="next">Selanjutnya</a>
-                            </li>
-                        @else
-                            <li class="page-item disabled">
-                                <span class="page-link">Selanjutnya</span>
-                            </li>
-                        @endif
-                    </ul>
+                    <div>
+                        <ul class="pagination">
+                            <!-- Tombol Sebelumnya -->
+                            @if ($strukturs->onFirstPage())
+                                <li class="page-item disabled">
+                                    <span class="page-link">Sebelumnya</span>
+                                </li>
+                            @else
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $strukturs->previousPageUrl() }}"
+                                        rel="prev">Sebelumnya</a>
+                                </li>
+                            @endif
+
+                            <!-- Tombol Selanjutnya -->
+                            @if ($strukturs->hasMorePages())
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $strukturs->nextPageUrl() }}"
+                                        rel="next">Selanjutnya</a>
+                                </li>
+                            @else
+                                <li class="page-item disabled">
+                                    <span class="page-link">Selanjutnya</span>
+                                </li>
+                            @endif
+                        </ul>
+                    </div>
                 </div>
+
             </div>
         </div>
-    </div>
-@endsection
+    @endsection

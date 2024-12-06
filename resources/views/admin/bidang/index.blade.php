@@ -4,7 +4,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
             <h6 class="m-0 font-weight-bold text-primary">Daftar Bidang
-                <a href="{{ route('bidang.create') }}" class="btn-primary text-white py-2 px-3 rounded hover:bg-blue">
+                <a href="{{ route('bidang.create') }}" class="btn btn-primary py-2 px-2 rounded hover:bg-blue">
                     <i class="fa-solid fa-plus"></i> Tambah
                 </a>
             </h6>
@@ -61,6 +61,41 @@
                         @endforeach
                     </tbody>
                 </table>
+
+                {{-- <div class="d-flex justify-content-between mt-3">
+                    <div>
+                        <p class="mb-0">Menampilkan {{ $bidang->firstItem() }} - {{ $bidang->lastItem() }} dari
+                            {{ $bidang->total() }} data</p>
+                    </div>
+
+                    <div>
+                        <ul class="pagination">
+                            <!-- Previous Button -->
+                            @if ($bidang->onFirstPage())
+                                <li class="page-item disabled">
+                                    <span class="page-link">Sebelumnya</span>
+                                </li>
+                            @else
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $bidang->previousPageUrl() }}"
+                                        rel="prev">Sebelumnya</a>
+                                </li>
+                            @endif
+
+                            <!-- Next Button -->
+                            @if ($bidang->hasMorePages())
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $bidang->nextPageUrl() }}" rel="next">Selanjutnya</a>
+                                </li>
+                            @else
+                                <li class="page-item disabled">
+                                    <span class="page-link">Selanjutnya</span>
+                                </li>
+                            @endif
+                        </ul>
+                    </div>
+                </div> --}}
+
             </div>
         </div>
     </div>

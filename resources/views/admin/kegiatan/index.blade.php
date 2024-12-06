@@ -50,10 +50,9 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        {{-- Contoh data kegiatan --}}
                         @forelse ($kegiatan as $key => $item)
                             <tr>
-                                <td>{{ $key + 1 }}</td>
+                                <td>{{ $kegiatan->firstItem() + $key }}</td>
                                 <td>{{ $item->nama }}</td>
                                 <td>{{ $item->deskripsi }}</td>
                                 <td>{{ $item->tanggal }}</td>
@@ -68,15 +67,17 @@
                                 </td>
                                 <td>
                                     <a href="{{ route('kegiatan.edit', $item) }}"
-                                        class="btn-success text-white py-1 px-3 rounded me-2"><i
-                                            class="fa-solid fa-pen-to-square"></i></a>
+                                        class="btn-success text-white py-1 px-3 rounded me-2">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
                                     <form action="{{ route('kegiatan.destroy', $item) }}" method="POST"
                                         class="inline-block">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn-danger text-white py-1 px-3 rounded"><i
-                                                class="fa-solid fa-trash"
-                                                onclick="return confirm('Yakin ingin menghapus kegiatan ini?')"></i></button>
+                                        <button type="submit" class="btn-danger text-white py-1 px-3 rounded"
+                                            onclick="return confirm('Yakin ingin menghapus kegiatan ini?')">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
                                     </form>
                                 </td>
                             </tr>
@@ -87,6 +88,38 @@
                         @endforelse
                     </tbody>
                 </table>
+            </div>
+
+            <div class="d-flex justify-content-between mt-3">
+                <div>
+                    <p class="mb-0">Menampilkan {{ $kegiatan->firstItem() }} - {{ $kegiatan->lastItem() }} dari
+                        {{ $kegiatan->total() }} data</p>
+                </div>
+
+                <div>
+                    <ul class="pagination">
+                        @if ($kegiatan->onFirstPage())
+                            <li class="page-item disabled">
+                                <span class="page-link">Sebelumnya</span>
+                            </li>
+                        @else
+                            <li class="page-item">
+                                <a class="page-link" href="{{ $kegiatan->previousPageUrl() }}"
+                                    rel="prev">Sebelumnya</a>
+                            </li>
+                        @endif
+
+                        @if ($kegiatan->hasMorePages())
+                            <li class="page-item">
+                                <a class="page-link" href="{{ $kegiatan->nextPageUrl() }}" rel="next">Selanjutnya</a>
+                            </li>
+                        @else
+                            <li class="page-item disabled">
+                                <span class="page-link">Selanjutnya</span>
+                            </li>
+                        @endif
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

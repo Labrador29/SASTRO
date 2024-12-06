@@ -86,31 +86,38 @@
                     </tbody>
                 </table>
 
-                <!-- Custom Pagination -->
-                <div class="d-flex justify-content-end mt-3">
-                    <ul class="pagination">
-                        <!-- Tombol Sebelumnya -->
-                        @if ($users->onFirstPage())
-                            <li class="page-item disabled">
-                                <span class="page-link">Sebelumnya</span>
-                            </li>
-                        @else
-                            <li class="page-item">
-                                <a class="page-link" href="{{ $users->previousPageUrl() }}" rel="prev">Sebelumnya</a>
-                            </li>
-                        @endif
+                <div class="d-flex justify-content-between mt-3">
+                    <div>
+                        <p class="mb-0">Menampilkan {{ $users->firstItem() }} - {{ $users->lastItem() }} dari
+                            {{ $users->total() }} data</p>
+                    </div>
 
-                        <!-- Tombol Selanjutnya -->
-                        @if ($users->hasMorePages())
-                            <li class="page-item">
-                                <a class="page-link" href="{{ $users->nextPageUrl() }}" rel="next">Selanjutnya</a>
-                            </li>
-                        @else
-                            <li class="page-item disabled">
-                                <span class="page-link">Selanjutnya</span>
-                            </li>
-                        @endif
-                    </ul>
+                    <div>
+                        <ul class="pagination">
+                            <!-- Tombol Sebelumnya -->
+                            @if ($users->onFirstPage())
+                                <li class="page-item disabled">
+                                    <span class="page-link">Sebelumnya</span>
+                                </li>
+                            @else
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $users->previousPageUrl() }}"
+                                        rel="prev">Sebelumnya</a>
+                                </li>
+                            @endif
+
+                            <!-- Tombol Selanjutnya -->
+                            @if ($users->hasMorePages())
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $users->nextPageUrl() }}" rel="next">Selanjutnya</a>
+                                </li>
+                            @else
+                                <li class="page-item disabled">
+                                    <span class="page-link">Selanjutnya</span>
+                                </li>
+                            @endif
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

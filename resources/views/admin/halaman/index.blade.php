@@ -1,4 +1,5 @@
 @extends('layouts.main')
+
 @section('container')
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -60,12 +61,14 @@
                                 </td>
                                 <td>{{ $item->bagian }}</td>
                                 <td>
-                                    <a href="{{ route('halaman.edit', $item) }}" class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="{{ route('halaman.edit', $item) }}" class="btn btn-sm btn-success"><i
+                                            class="fa-solid fa-pen-to-square"></i></a>
                                     <form action="{{ route('halaman.destroy', $item) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger"
-                                            onclick="return confirm('Yakin ingin menghapus kegiatan ini?')">Hapus</button>
+                                            onclick="return confirm('Yakin ingin menghapus kegiatan ini?')"><i
+                                                class="fa-solid fa-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -76,6 +79,37 @@
                         @endforelse
                     </tbody>
                 </table>
+            </div>
+
+            <div class="d-flex justify-content-between mt-3">
+                <div>
+                    <p class="mb-0">Menampilkan {{ $halaman->firstItem() }} - {{ $halaman->lastItem() }} dari
+                        {{ $halaman->total() }} data</p>
+                </div>
+
+                <div>
+                    <ul class="pagination">
+                        @if ($halaman->onFirstPage())
+                            <li class="page-item disabled">
+                                <span class="page-link">Sebelumnya</span>
+                            </li>
+                        @else
+                            <li class="page-item">
+                                <a class="page-link" href="{{ $halaman->previousPageUrl() }}" rel="prev">Sebelumnya</a>
+                            </li>
+                        @endif
+
+                        @if ($halaman->hasMorePages())
+                            <li class="page-item">
+                                <a class="page-link" href="{{ $halaman->nextPageUrl() }}" rel="next">Selanjutnya</a>
+                            </li>
+                        @else
+                            <li class="page-item disabled">
+                                <span class="page-link">Selanjutnya</span>
+                            </li>
+                        @endif
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

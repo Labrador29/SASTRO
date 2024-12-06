@@ -70,6 +70,41 @@
                         @endforeach
                     </tbody>
                 </table>
+
+                <div class="d-flex justify-content-between mt-3">
+                    <div>
+                        <p class="mb-0">Menampilkan {{ $prokers->firstItem() }} - {{ $prokers->lastItem() }} dari
+                            {{ $prokers->total() }} data</p>
+                    </div>
+
+                    <div>
+                        <ul class="pagination">
+                            <!-- Tombol Sebelumnya -->
+                            @if ($prokers->onFirstPage())
+                                <li class="page-item disabled">
+                                    <span class="page-link">Sebelumnya</span>
+                                </li>
+                            @else
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $prokers->previousPageUrl() }}"
+                                        rel="prev">Sebelumnya</a>
+                                </li>
+                            @endif
+
+                            <!-- Tombol Selanjutnya -->
+                            @if ($prokers->hasMorePages())
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $prokers->nextPageUrl() }}"
+                                        rel="next">Selanjutnya</a>
+                                </li>
+                            @else
+                                <li class="page-item disabled">
+                                    <span class="page-link">Selanjutnya</span>
+                                </li>
+                            @endif
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

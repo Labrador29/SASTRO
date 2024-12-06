@@ -12,13 +12,22 @@ class NewsController extends Controller
     public function index()
     {
         $news = News::with('category')->paginate(5);
-        return view('admin.news.index', compact('news'));
+
+        return view(
+            'admin.news.index',
+            ['title' => 'Admin | Berita'],
+            compact('news')
+        );
     }
 
     public function create()
     {
         $categories = Category::all();
-        return view('admin.news.create', compact('categories'));
+        return view(
+            'admin.news.create',
+            ['title' => 'Admin | Tambah Berita'],
+            compact('categories')
+        );
     }
 
     public function store(Request $request)
@@ -47,7 +56,11 @@ class NewsController extends Controller
     public function edit(News $news)
     {
         $categories = Category::all();
-        return view('admin.news.edit', compact('news', 'categories'));
+        return view(
+            'admin.news.edit',
+            ['title' => 'Admin | Edit Berita'],
+            compact('news', 'categories')
+        );
     }
 
     public function update(Request $request, News $news)
