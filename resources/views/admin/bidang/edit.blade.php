@@ -2,15 +2,20 @@
 
 @section('container')
     <div class="container max-w-6xl mx-auto px-4 text-black">
-        <div class="d-flex align-items-center mb-4">
-            <h1 class="text-black font-bold m-0" style="font-size: 25px;">
-                <a href="{{ route('bidang.index') }}" class="text-gray-500">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </a> Edit Bidang
-            </h1>
-        </div>
+        <!-- Card container with flexbox for centering the heading -->
         <div class="card shadow mb-4">
             <div class="card-body">
+                <div class="flex items-center justify-between mb-4">
+                    <!-- Left Arrow Icon -->
+                    <a href="{{ route('bidang.index') }}" class="text-gray-500 text-2xl">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+
+                    <!-- Centered Title -->
+                    <h1 class="text-black font-bold m-0" style="font-size: 25px; text-align: center; flex-grow: 1;">
+                        Edit Bidang
+                    </h1>
+                </div>
                 <form action="{{ route('bidang.update', $bidang) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
@@ -29,8 +34,12 @@
                         <small class="text-secondary">Kosongkan jika tidak ingin mengganti gambar.</small>
                     </div>
 
-                    <button type="submit"
-                        class="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600">Update</button>
+                    <div class="d-flex justify-content-end">
+                        <button type="submit"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            Simpan
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

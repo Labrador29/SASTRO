@@ -47,8 +47,6 @@
                         <i class="fa-solid fa-arrow-left"></i>
                     </a> Tambah Bidang
                 </h1>
-                <hr>
-                <br>
                 <form action="{{ route('bidang.store') }}" method="POST" enctype="multipart/form-data"
                     class="form-container">
                     @csrf

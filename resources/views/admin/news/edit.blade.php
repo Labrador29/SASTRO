@@ -46,8 +46,6 @@
                         <i class="fa-solid fa-arrow-left"></i>
                     </a> Update Berita
                 </h1>
-                <hr>
-                <br>
                 <form action="{{ route('news.update', $news) }}" method="POST" enctype="multipart/form-data"
                     class="form-container">
                     @csrf

@@ -45,9 +45,8 @@
                         <i class="fa-solid fa-arrow-left"></i>
                     </a> Tambah Sponsor
                 </h1>
-                <hr>
-                <br>
-                <form action="{{ route('sponsor.store') }}" method="POST" enctype="multipart/form-data" class="form-container">
+                <form action="{{ route('sponsor.store') }}" method="POST" enctype="multipart/form-data"
+                    class="form-container">
                     @csrf
                     <div class="mb-4">
                         <label for="nama" class="block text-sm font-medium">Nama Perusahaan <span

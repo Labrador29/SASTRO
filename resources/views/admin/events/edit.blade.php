@@ -2,14 +2,19 @@
 
 @section('container')
     <div class="container mx-auto px-4 py-8">
-        <div class="max-w-2xl mx-auto">
-            <h1 class="text-black font-bold mb-6" style="font-size: 30px;">
-                <a href="{{ route('events.index') }}" class="text-gray-500">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </a> Edit Acara
-            </h1>
+        <div class="w-full md:w-3/4 lg:w-1/2 mx-auto">
 
-            <form action="/admin/events/{{ $event->id }}" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <form action="/admin/events/{{ $event->id }}" method="POST"
+                class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <div class="flex items-center justify-between mb-6">
+                    <a href="{{ route('events.index') }}" class="text-gray-500 text-2xl">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+
+                    <h1 class="text-black font-bold" style="font-size: 30px; text-align: center; flex-grow: 1;">
+                        Edit Acara
+                    </h1>
+                </div>
                 @csrf
                 @method('PUT')
 
@@ -50,15 +55,11 @@
                         required>
                 </div>
 
-                <div class="flex items-center justify-between">
+                <div class="d-flex justify-content-end">
                     <button type="submit"
-                        class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                        Update Acara
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        Simpan
                     </button>
-                    <a href="{{ route('events.index') }}"
-                        class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                        Batal
-                    </a>
                 </div>
             </form>
         </div>
