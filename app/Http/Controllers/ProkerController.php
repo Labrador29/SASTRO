@@ -8,10 +8,20 @@ use Illuminate\Validation\Rule;
 
 class ProkerController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $prokers = Proker::all();
-        $prokers = Proker::paginate(5);
+        $search = $request->get('search');
+
+        if ($search) {
+            $prokers = Proker::where('nama', 'like', '%' . $search . '%')
+                ->orWhere('nama', 'like', '%' . $search . '%')
+                ->paginate(5);
+        } else {
+            $prokers = Proker::paginate(5);
+        }
+
+        // $prokers = Proker::all();
+        // $prokers = Proker::paginate(5);
 
         return view(
             'admin.proker.index',

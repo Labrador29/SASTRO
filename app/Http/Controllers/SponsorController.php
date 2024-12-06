@@ -8,9 +8,18 @@ use Illuminate\Http\Request;
 
 class SponsorController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $sponsor = Sponsor::paginate(5);
+        $search = $request->get('search');
+
+        if ($search) {
+            $sponsor = Sponsor::where('nama', 'like', '%' . $search . '%')
+                ->orWhere('nama', 'like', '%' . $search . '%')
+                ->paginate(5);
+        } else {
+            $sponsor = Sponsor::paginate(5);
+        }
+
         return view(
             'admin.sponsor.index',
             ['title' => 'Admin | Sponsor'],

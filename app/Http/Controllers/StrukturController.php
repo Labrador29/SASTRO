@@ -9,7 +9,15 @@ class StrukturController extends Controller
 {
     public function index(Request $request)
     {
-        $strukturs = Struktur::paginate(5);
+        $search = $request->get('search');
+
+        if ($search) {
+            $strukturs = Struktur::where('nama_panjang', 'like', '%' . $search . '%')
+                ->orWhere('nama_panjang', 'like', '%' . $search . '%')
+                ->paginate(5);
+        } else {
+            $strukturs = Struktur::paginate(5);
+        }
 
         return view('admin.struktur.index', compact('strukturs'))
             ->with('title', 'Admin | Struktur');

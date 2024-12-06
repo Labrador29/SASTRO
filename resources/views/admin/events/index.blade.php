@@ -15,16 +15,22 @@
             </div>
         @endif
         <div class="card-body">
-            <form action="" method="GET" class="mb-4">
+            <form action="" method="GET" class="mb-4" id="searchForm">
                 <div class="row align-items-center">
                     <div class="col-md-9">
                         <input type="text" name="search" class="form-control" value="{{ request()->get('search') }}">
                     </div>
-                    <div class="col-md-3">
-                        <button type="submit" class="btn btn-primary w-100">Cari</button>
+                    <div class="col-md-3 d-flex">
+                        @if (request()->get('search'))
+                            <button type="button" id="resetBtn" class="btn btn-danger w-50 mr-2"
+                                onclick="resetSearch()"><i class="fa-solid fa-x"></i></button>
+                        @endif
+                        <button type="submit" id="searchBtn"
+                            class="btn btn-primary w-100 {{ request()->get('search') ? 'w-50' : '' }}">Cari</button>
                     </div>
                 </div>
             </form>
+
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead style="background-color: rgb(183, 0, 255);;">
@@ -109,4 +115,11 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function resetSearch() {
+            window.location.href =
+                "{{ route('events.index') }}";
+        }
+    </script>
 @endsection

@@ -9,10 +9,16 @@ use App\Models\Attendance;
 
 class EventController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $events = Event::orderBy('event_date', 'desc')->get();
-        $events = Event::paginate(5);
+        $search = $request->get('search');
+
+        $events = Event::when($search, function ($query, $search) {
+            return $query->where('name', 'like', '%' . $search . '%')
+                ->orWhere('description', 'like', '%' . $search . '%');
+        })
+            ->orderBy('event_date', 'desc')
+            ->paginate(5);
 
         return view(
             'admin.events.index',
@@ -20,6 +26,7 @@ class EventController extends Controller
             compact('events')
         );
     }
+
 
     public function create()
     {

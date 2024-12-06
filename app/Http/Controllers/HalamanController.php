@@ -8,10 +8,18 @@ use Illuminate\Support\Facades\File;
 
 class HalamanController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $halaman = Halaman::all();
-        $halaman = Halaman::paginate(5);
+        $search = $request->get('search');
+
+        if ($search) {
+            $halaman = Halaman::where('bagian', 'like', '%' . $search . '%')
+                ->orWhere('bagian', 'like', '%' . $search . '%')
+                ->paginate(5);
+        } else {
+            $halaman = Halaman::paginate(5);
+        }
+
         return view(
             'admin.halaman.index',
             ['title' => 'Admin | Beranda'],
@@ -40,13 +48,13 @@ class HalamanController extends Controller
             $validated['foto'] = $filename;
         }
 
-        halaman::create($validated);
+        Halaman::create($validated);
 
         return redirect()->route('halaman.index')
-            ->with('success', 'halaman berhasil ditambahkan.');
+            ->with('success', 'Halaman berhasil ditambahkan.');
     }
 
-    public function edit(halaman $halaman)
+    public function edit(Halaman $halaman)
     {
         return view(
             'admin.halaman.Form',
@@ -55,7 +63,7 @@ class HalamanController extends Controller
         );
     }
 
-    public function update(Request $request, halaman $halaman)
+    public function update(Request $request, Halaman $halaman)
     {
         $validated = $request->validate([
             'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif',
@@ -74,6 +82,6 @@ class HalamanController extends Controller
         $halaman->update($validated);
 
         return redirect()->route('admin.halaman.index')
-            ->with('success', 'halaman berhasil diperbarui.');
+            ->with('success', 'Halaman berhasil diperbarui.');
     }
 }

@@ -9,9 +9,16 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $news = News::with('category')->paginate(5);
+        $search = $request->get('search');
+
+        $news = News::with('category')
+            ->when($search, function ($query, $search) {
+                return $query->where('judul', 'like', '%' . $search . '%')
+                    ->orWhere('judul', 'like', '%' . $search . '%');
+            })
+            ->paginate(5);
 
         return view(
             'admin.news.index',
@@ -19,6 +26,7 @@ class NewsController extends Controller
             compact('news')
         );
     }
+
 
     public function create()
     {

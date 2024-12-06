@@ -8,16 +8,25 @@ use Illuminate\Support\Facades\File;
 
 class KegiatanController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $kegiatan = Kegiatan::all();
-        $kegiatan = Kegiatan::paginate(5);
+        $search = $request->get('search');
+
+        if ($search) {
+            $kegiatan = kegiatan::where('nama', 'like', '%' . $search . '%')
+                ->orWhere('nama', 'like', '%' . $search . '%')
+                ->paginate(5);
+        } else {
+            $kegiatan = kegiatan::paginate(5);
+        }
+
         return view(
             'admin.kegiatan.index',
             ['title' => 'Admin | Kegiatan'],
             compact('kegiatan')
         );
     }
+
 
     public function create()
     {
