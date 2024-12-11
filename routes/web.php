@@ -55,6 +55,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('events', EventController::class)->except(['create', 'store', 'edit', 'update', 'destroy']);
     Route::get('/events/{event}/scan', [EventController::class, 'showScanner'])->name('events.scan');
     Route::post('/events/attendance', [EventController::class, 'processAttendance'])->name('events.attendance');
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
 });
 
 
@@ -76,6 +77,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::resource('materi', MateriController::class);
     Route::resource('users', UserController::class);
     Route::resource('profile', ProfileController::class);
+    Route::put('profile', [ProfileController::class, 'update'])->name('password.update');
+
+
 
 
     // Route::get('/users', [UserController::class, 'index'])->name('users.index');

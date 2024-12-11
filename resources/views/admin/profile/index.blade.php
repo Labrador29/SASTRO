@@ -9,7 +9,7 @@
                         <h4>Profil Anda</h4>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('profile.update') }}">
+                        <form method="POST" action="{{ route('password.update') }}">
                             @csrf
                             @method('PUT')
 

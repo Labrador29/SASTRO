@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\Controller;
 use App\Models\User;
 
 
@@ -16,31 +17,25 @@ class ProfileController extends Controller
         return view('admin.profile.index');
     }
 
-    public function update(Request $request, User $user)
+    public function update(Request $request)
     {
-        // Validasi data yang dikirimkan
-        $validated = $request->validate([
+        $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:users,email,' . auth()->id(),
-            'password' => 'required|min:8|confirmed',
+            'password' => 'required|confirmed',
         ]);
 
-        // Dapatkan user yang sedang login
         $user = auth()->user();
 
-        // Update nama dan email
-        $user->name = $validated['name'];
-        $user->email = $validated['email'];
+        $user->name = $validatedData['name'];
+        $user->email = $validatedData['email'];
 
-        // Jika password diisi, update password
-        if (!empty($validated['password'])) {
-            $user->password = Hash::make($validated['password']);
+        if (!empty($validatedData['password'])) {
+            $user->password = Hash::make($validatedData['password']);
         }
 
-        // Simpan perubahan
         $user->save();
 
-        // Redirect kembali dengan pesan sukses
         return redirect()->back()->with('success', 'Profil berhasil diperbarui.');
     }
 }
