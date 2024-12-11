@@ -19,6 +19,7 @@ use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\MassStrukturController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,6 +75,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::resource('halaman', HalamanController::class);
     Route::resource('materi', MateriController::class);
     Route::resource('users', UserController::class);
+    Route::resource('profile', ProfileController::class);
 
 
     // Route::get('/users', [UserController::class, 'index'])->name('users.index');

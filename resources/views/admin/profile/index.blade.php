@@ -1,136 +1,68 @@
 @extends('layouts.main')
 
 @section('container')
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3 d-flex justify-content-between align-items-center">
-            <h6 class="m-0 font-weight-bold text-primary">Daftar User
-                <a href="{{ route('admin.mass.register.form') }}" class="btn btn-primary py-2 px-2 rounded hover:bg-blue">
-                    <i class="fa-solid fa-plus"></i> Tambah
-                </a>
-            </h6>
-        </div>
-
-        <div class="card-body">
-            <form action="" method="GET" class="mb-4" id="searchForm">
-                <div class="row align-items-center">
-                    <div class="col-md-9">
-                        <input type="text" name="search" class="form-control" value="{{ request()->get('search') }}">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card text-black">
+                    <div class="card-header text-center">
+                        <h4>Profil Anda</h4>
                     </div>
-                    <div class="col-md-3 d-flex">
-                        @if (request()->get('search'))
-                            <button type="button" id="resetBtn" class="btn btn-danger w-50 mr-2"
-                                onclick="resetSearch()"><i class="fa-solid fa-x"></i></button>
-                        @endif
-                        <button type="submit" id="searchBtn"
-                            class="btn btn-primary w-100 {{ request()->get('search') ? 'w-50' : '' }}">Cari</button>
-                    </div>
-                </div>
-            </form>
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('profile.update') }}">
+                            @csrf
+                            @method('PUT')
 
-            @if (session('success'))
-                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4">
-                    {{ session('success') }}
-                </div>
-            @endif
+                            <!-- Nama -->
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nama</label>
+                                <input type="text" name="name" id="name"
+                                    class="form-control @error('name') is-invalid @enderror"
+                                    value="{{ old('name', auth()->user()->name) }}" required>
+                                @error('name')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
 
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead style="background-color: rgb(183, 0, 255);">
-                        <tr class="text-white">
-                            <th>ID</th>
-                            <th>Nama Panjang</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Angkatan</th>
-                            <th>Bidang</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nama Panjang</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Angkatan</th>
-                            <th>Bidang</th>
-                            <th>Aksi</th>
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        @foreach ($users as $user)
-                            <tr>
-                                <td>{{ $loop->iteration + ($users->currentPage() - 1) * $users->perPage() }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>
-                                    <span
-                                        class="px-3 py-1 text-white rounded {{ $user->role == 'admin' ? 'bg-warning' : ($user->role == 'pengurus_aktif' ? 'bg-success' : ($user->role == 'alumni' ? 'bg-purple-600' : 'bg-primary')) }}">
-                                        {{ ucfirst($user->role) }}
-                                    </span>
-                                </td>
-                                <td>{{ $user->member->angkatan ?? '-' }}</td>
-                                <td>{{ $user->member->bidang->nama_bidang ?? '-' }}</td>
-                                <td>
-                                    <a href="" class="btn-success text-white py-1 px-3 rounded me-2">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </a>
+                            <!-- Email -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" name="email" id="email"
+                                    class="form-control @error('email') is-invalid @enderror"
+                                    value="{{ old('email', auth()->user()->email) }}" required>
+                                @error('email')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
 
-                                    <form action="" method="POST" class="inline-block">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn-danger text-white py-1 px-3 rounded">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                            <!-- Password -->
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" name="password" id="password"
+                                    class="form-control @error('password') is-invalid @enderror"
+                                    placeholder="Masukkan password baru" required>
+                                @error('password')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
 
-                <div class="d-flex justify-content-between mt-3">
-                    <div>
-                        <p class="mb-0">Menampilkan {{ $users->firstItem() }} - {{ $users->lastItem() }} dari
-                            {{ $users->total() }} data</p>
-                    </div>
+                            <!-- Konfirmasi Password -->
+                            <div class="mb-3">
+                                <label for="password_confirmation" class="form-label">Konfirmasi Password</label>
+                                <input type="password" name="password_confirmation" id="password_confirmation"
+                                    class="form-control" placeholder="Konfirmasi password baru" required>
+                            </div>
 
-                    <div>
-                        <ul class="pagination">
-                            <!-- Tombol Sebelumnya -->
-                            @if ($users->onFirstPage())
-                                <li class="page-item disabled">
-                                    <span class="page-link">Sebelumnya</span>
-                                </li>
-                            @else
-                                <li class="page-item">
-                                    <a class="page-link" href="{{ $users->previousPageUrl() }}"
-                                        rel="prev">Sebelumnya</a>
-                                </li>
-                            @endif
-
-                            <!-- Tombol Selanjutnya -->
-                            @if ($users->hasMorePages())
-                                <li class="page-item">
-                                    <a class="page-link" href="{{ $users->nextPageUrl() }}" rel="next">Selanjutnya</a>
-                                </li>
-                            @else
-                                <li class="page-item disabled">
-                                    <span class="page-link">Selanjutnya</span>
-                                </li>
-                            @endif
-                        </ul>
+                            <!-- Tombol Simpan -->
+                            <div class="text-end">
+                                <button type="submit" class="btn-primary text-white py-2 px-4 rounded">
+                                    Simpan
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        function resetSearch() {
-            window.location.href =
-                "{{ route('users.index') }}";
-        }
-    </script>
 @endsection

@@ -20,11 +20,11 @@
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                     Logout
                 </a>
-                <a href="{{ route('logout') }}" class="dropdown-item"
-                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <a href="{{ route('profile.index') }}" class="dropdown-item">
                     <i class="fa-solid fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                 </a>
+
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
