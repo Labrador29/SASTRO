@@ -16,6 +16,12 @@
                 {{ session('success') }}
             </div>
         @endif
+        @if (session('info'))
+            <div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative mb-4">
+                {{ session('info') }}
+            </div>
+        @endif
+
 
         <div class="card-body">
             <form action="" method="GET" class="mb-4" id="searchForm">

@@ -70,18 +70,33 @@ class HalamanController extends Controller
             'bagian' => 'required|string|max:255',
         ]);
 
+        $changes = [];
+
+        // Cek perubahan pada bagian
+        if ($halaman->bagian !== $request->bagian) {
+            $changes['bagian'] = $request->bagian;
+        }
+
+        // Cek perubahan pada foto
         if ($request->hasFile('foto')) {
             if ($halaman->foto && File::exists(public_path('assets/halaman/' . $halaman->foto))) {
                 File::delete(public_path('assets/halaman/' . $halaman->foto));
             }
             $filename = time() . '.' . $request->foto->getClientOriginalExtension();
             $request->foto->move(public_path('assets/halaman'), $filename);
-            $validated['foto'] = $filename;
+            $changes['foto'] = $filename;
         }
 
-        $halaman->update($validated);
+        // Jika tidak ada perubahan, kembalikan pesan
+        if (empty($changes)) {
+            return redirect()->route('halaman.index')
+                ->with('info', 'Tidak ada data yang diperbarui.');
+        }
 
-        return redirect()->route('admin.halaman.index')
+        // Perbarui data
+        $halaman->update($changes);
+
+        return redirect()->route('halaman.index')
             ->with('success', 'Halaman berhasil diperbarui.');
     }
 }

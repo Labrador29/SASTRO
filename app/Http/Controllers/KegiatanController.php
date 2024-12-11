@@ -77,20 +77,39 @@ class KegiatanController extends Controller
             'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
+        $changes = [];
+
+        // Cek perubahan data teks
+        foreach (['nama', 'deskripsi', 'tanggal', 'jenis'] as $field) {
+            if ($kegiatan->$field !== $request->$field) {
+                $changes[$field] = $request->$field;
+            }
+        }
+
+        // Cek perubahan pada foto
         if ($request->hasFile('foto')) {
             if ($kegiatan->foto && File::exists(public_path('assets/kegiatan/' . $kegiatan->foto))) {
                 File::delete(public_path('assets/kegiatan/' . $kegiatan->foto));
             }
             $filename = time() . '.' . $request->foto->getClientOriginalExtension();
             $request->foto->move(public_path('assets/kegiatan'), $filename);
-            $validated['foto'] = $filename;
+            $changes['foto'] = $filename;
         }
 
-        $kegiatan->update($validated);
+        // Jika tidak ada perubahan, kembalikan pesan info
+        if (empty($changes)) {
+            return redirect()->route('kegiatan.index')
+                ->with('info', 'Tidak ada data yang diperbarui.');
+        }
+
+        // Perbarui data yang berubah
+        $kegiatan->update($changes);
 
         return redirect()->route('kegiatan.index')
             ->with('success', 'Kegiatan berhasil diperbarui.');
     }
+
+
 
     public function destroy(Kegiatan $kegiatan)
     {
