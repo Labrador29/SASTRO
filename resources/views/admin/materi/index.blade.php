@@ -48,8 +48,7 @@
                     @forelse ($materi as $m)
                     <tr>
                         <td>{{ $m->judul }}</td>
-                        <td><a href="{{ Storage::url($m->file_path) }}" target="_blank">Unduh</a>
-                            << /td>
+                        <td><a href="{{ asset($m->file_path) }}" target="_blank">Unduh</a>
                         <td>{{ $m->is_hidden ? 'Hidden' : 'Displayed' }}</td>
                         <td>
                             <a href="{{ route('materi.edit', $m->id) }}" class="btn btn-sm btn-warning">Edit</a>

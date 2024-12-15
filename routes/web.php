@@ -40,6 +40,7 @@ Route::get('/materi', [PageController::class, 'materi'])->name('materi');
 Route::get('/organisasi', [PageController::class, 'organisasi'])->name('organisasi');
 Route::get('/berita', [PageController::class, 'berita'])->name('berita.index');
 Route::get('/berita/{id}', [PageController::class, 'beritaDetail'])->name('berita.detail');
+Route::get('/materi/download/{materi}', [MateriController::class, 'download'])->name('materi.download');
 
 // Auth Routes
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');

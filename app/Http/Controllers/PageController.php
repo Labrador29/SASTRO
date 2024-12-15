@@ -9,6 +9,7 @@ use App\Models\Sponsor;
 use App\Models\proker;
 use App\Models\Kegiatan;
 use App\Models\Halaman;
+use App\Models\Materi;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -21,8 +22,9 @@ class PageController extends Controller
         $background = Halaman::where('bagian', 'background')->get();
         $about = Halaman::where('bagian', 'about')->get();
         $pendaftaran = Halaman::where('bagian', 'pendaftaran')->get();
+        $partisipasi = Kegiatan::where('jenis', 'partisipasi')->get();
 
-        return view('beranda.home.index', compact('news', 'bidangs', 'sponsor', 'background', 'about', 'pendaftaran'));
+        return view('beranda.home.index', compact('news', 'bidangs', 'sponsor', 'background', 'about', 'pendaftaran', 'partisipasi'));
     }
 
 
@@ -47,7 +49,8 @@ class PageController extends Controller
 
     public function materi()
     {
-        return view('beranda.materi.index');
+        $materi = Materi::all();
+        return view('beranda.materi.index', compact('materi'));
     }
 
     public function organisasi(Request $request)

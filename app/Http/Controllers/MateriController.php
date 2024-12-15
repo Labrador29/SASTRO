@@ -84,4 +84,13 @@ class MateriController extends Controller
 
         return redirect()->route('materi.index')->with('success', 'Materi berhasil dihapus.');
     }
+    public function download(Materi $materi)
+    {
+        if (file_exists(public_path($materi->file_path))) {
+            $extension = pathinfo($materi->file_path, PATHINFO_EXTENSION);
+            $fileName = $materi->judul . '.' . $extension;
+            return response()->download(public_path($materi->file_path), $fileName);
+        }
+        return redirect()->back()->with('error', 'File tidak ditemukan.');
+    }
 }

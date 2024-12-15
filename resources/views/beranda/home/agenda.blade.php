@@ -10,15 +10,14 @@
         <div class="swiper mySwiper py-5">
             <div class="swiper-wrapper">
                 <!-- Slide 1 -->
-                @foreach($news as $item)
+                @foreach($partisipasi as $item)
                 <div class="swiper-slide">
                     <div class="card border-0">
-                        <img src="{{ asset('assets/berita/' . $item->foto) }}" class="img-fluid mb-3" alt="{{ $item->judul }}">
+                        <img src="{{ asset('assets/kegiatan/' . $item->foto) }}" class="img-fluid mb-3" alt="{{ $item->nama }}">
                         <div class="konten-agenda">
-                            <p class="mb-3 text-secondary">{{ Carbon\Carbon::parse($item->tanggal_berita)->format('d-m-Y') }}</p>
-                            <h4 class="fw-bold mb-3">{{ $item->judul }}</h4>
-                            <p class="text-secondary"> {{ \Illuminate\Support\Str::limit($item->isi, 100) }} {{-- Potong teks jika terlalu panjang --}}</p>
-                            <p class="text-secondary"> Kategori: {{ $item->category->name ?? 'Tanpa Kategori' }}</p>
+                            <p class="mb-3 text-secondary">{{ Carbon\Carbon::parse($item->tanggal)->format('d-m-Y') }}</p>
+                            <h4 class="fw-bold mb-3">{{ $item->nama }}</h4>
+                            <p class="text-secondary"> {{ \Illuminate\Support\Str::limit($item->deskripsi, 100) }} {{-- Potong teks jika terlalu panjang --}}</p>
                             <a href="{{ route('berita.detail', $item->id) }}" class="text-decoration-none text-danger">Selengkapnya</a>
                         </div>
                     </div>

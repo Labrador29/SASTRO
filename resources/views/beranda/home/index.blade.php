@@ -50,8 +50,9 @@
 
 
 @include('beranda.home.about')
-@include('beranda.home.agenda')
+@include('beranda.home.news')
 @include('beranda.home.daftar')
+@include('beranda.home.agenda')
 @include('beranda.home.sponsor')
 @include('beranda.home.bidang')
 @include('beranda.home.faq')

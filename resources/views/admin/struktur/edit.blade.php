@@ -90,7 +90,7 @@
                     </div>
                     <div class="form-group">
                         <label for="NTA">NTA <span class="text-red-500">*</span></label>
-                        <input type="number" name="NTA" id="NTA" class="form-control"
+                        <input type="text" name="NTA" id="NTA" class="form-control"
                             value="{{ $struktur->NTA }}" required>
                     </div>
                     <div class="form-group">
