@@ -7,6 +7,7 @@
                 <h4>Pangkalan SMK Negeri 1 Lumajang</h4>
             </div>
         </div>
+        </div>
     </section>
 
     <section id="program" style="margin-top: -30px;">
@@ -50,9 +51,10 @@
 
 
     @include('beranda.home.about')
-    @include('beranda.home.agenda')
+    @include('beranda.home.news')
     @include('beranda.home.daftar')
-    {{-- @include('beranda.home.sponsor') --}}
+    @include('beranda.home.agenda')
+    @include('beranda.home.sponsor')
     @include('beranda.home.bidang')
     @include('beranda.home.faq')
 @endsection
