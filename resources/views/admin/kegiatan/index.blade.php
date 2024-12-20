@@ -14,18 +14,9 @@
                 {{ session('success') }}
             </div>
         @endif
-        @if (session('info'))
-            <div class="alert alert-info">
-                {{ session('info') }}
-            </div>
-        @endif
-
         <div class="card-body">
             <form action="" method="GET" class="mb-4" id="searchForm">
-
-
-
-
+                <div class="row align-items-center">
                     <div class="col-md-9">
                         <input type="text" name="search" class="form-control" value="{{ request()->get('search') }}">
                     </div>

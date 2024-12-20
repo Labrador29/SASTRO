@@ -10,7 +10,7 @@
         <div class="container text-center text-white">
             <div class="hero-title">
                 <div class="hero-text">Profil Kami<br> Dewan Ambalan Sastrodikoro</div>
-                <h4>Gugus Depan SMK Negeri 1 Lumajang</h4>
+                <h4>Pangkalan SMK Negeri 1 Lumajang</h4>
             </div>
         </div>
     </section>
