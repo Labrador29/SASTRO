@@ -71,7 +71,7 @@
                             </span>
                         </td>
                         <td>{{ $user->angkatan ?? '-' }}</td>
-                        <td>{!! QrCode::size(200)->generate(auth()->user()->id) !!}</td>
+                        <td>{!! QrCode::size(200)->generate($user->id) !!}</td>
                         <td>
                             <a href="{{ route('users.edit', $user) }}" class="btn-success text-white py-1 px-3 rounded me-2">
                                 <i class="fa-solid fa-pen-to-square"></i>

@@ -64,7 +64,7 @@
                                 <td>{{ $item->tanggal_berita }}</td>
                                 <td>
                                     @if ($item->foto)
-                                        <img src="{{ Storage::url($item->foto) }}" alt="Foto Berita" width="100">
+                                        <img src="{{ asset('assets/berita/' . $item->foto) }}" alt="Foto Berita" width="100">
                                     @endif
                                 </td>
                                 <td>

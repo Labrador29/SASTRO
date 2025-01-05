@@ -103,6 +103,12 @@
             <span>Berita</span>
         </a>
     </li>
+    <li class="nav-item {{ request()->routeIs('proposal.index') ? 'active' : '' }}">
+        <a class="nav-link custom-nav-link" href="{{ route('proposal.index') }}">
+            <i class="fa-solid fa-newspaper"></i>
+            <span>Proposal</span>
+        </a>
+    </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">

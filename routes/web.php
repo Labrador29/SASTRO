@@ -20,6 +20,7 @@ use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\MassStrukturController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProposalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,6 +80,10 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::resource('users', UserController::class);
     Route::resource('profile', ProfileController::class);
     Route::put('profile', [ProfileController::class, 'update'])->name('password.update');
+    Route::resource('proposal', ProposalController::class);
+    Route::post('proposal/{proposal}/upload-ttd', [ProposalController::class, 'uploadTtd'])->name('proposal.uploadTtd');
+    Route::get('proposal/download/{type}/{proposal}', [ProposalController::class, 'download'])->name('proposal.download');
+
 
 
 
